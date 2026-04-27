@@ -58,7 +58,7 @@ export default function HeroSection() {
       <div className="light-ray absolute -left-28 -top-24 h-[520px] w-[520px] opacity-90" />
 
       <div className="ghost-word pointer-events-none fixed left-1/2 top-[20vh] -translate-x-1/2 text-[18vw] font-black uppercase leading-none tracking-[-0.08em] text-white/[0.055]">
-        SYNETICAL
+        KHIDO
       </div>
 
       <div className="hero-sphere absolute left-1/2 top-[28vh] h-[42vw] max-h-[700px] min-h-[360px] w-[42vw] min-w-[360px] max-w-[700px] -translate-x-1/2">
@@ -68,7 +68,7 @@ export default function HeroSection() {
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-[96rem] flex-col justify-end">
         <div className="mx-auto max-w-6xl text-center">
           <p className="hero-reveal mb-7 text-sm font-semibold uppercase tracking-[0.42em] text-white/85">
-            SYNETICAL
+            KHIDO
           </p>
 
           <h1 className="hero-reveal text-[10vw] font-light leading-[0.94] tracking-[-0.06em] text-white md:text-[5.8rem] xl:text-[7rem]">

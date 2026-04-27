@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 const columns = {
-  Services: ["Product Design", "Development", "GTM Strategy", "Healthcare Apps", "AI Development", "IoT Development"],
+  Services: ["Diseño de Productos", "Desarrollo", "Estrategia de Comercialización", "Aplicaciones Sanitarias", "Desarrollo de IA", "Desarrollo de IoT"],
   Atom: ["Atom Enterprise", "Atom Agentic", "Atom IntentIQ", "Compare Atom", "Atom GIS", "Atom Red Team"],
-  Demos: ["Voice Agents", "Generative UI", "Sentiment AI", "Lie Detector"],
+  Demos: ["Agentes de voz", "UI Generativa", "IA de Sentimiento", "Detector de Mentiras"],
   Resources: ["Open Antimatter", "Clinix AI Platform", "Clinix AI", "Synergies4", "Curehire", "Feature", "Vidzee", "Rhym3", "OWASP", "Contact"]
 };
 
@@ -29,11 +29,11 @@ export default function Footer() {
     <footer className="footer-aura relative bg-ink px-5 pb-12 pt-36 md:px-8">
       <div className="mx-auto grid max-w-[96rem] gap-16 md:grid-cols-[1.25fr_2fr]">
         <div>
-          <a href="mailto:atom@example.com" className="text-3xl">atom@example.com</a>
+          <a href="mailto:atom@example.com" className="text-3xl">ventas@khido.cl</a>
           <a href="#" className="mt-4 block w-max border-b border-white text-xl">Linkedin↗</a>
 
           <p className="mt-12 text-xl">
-            Based in Atlanta, GA <span className="ml-4 text-white/36">Serving clients globally</span>
+            Santiago, Chile <span className="ml-4 text-white/36"></span>
           </p>
 
           <p className="mt-5 text-[7rem] font-semibold leading-none tracking-[-0.08em] md:text-[8.5rem]">
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="mx-auto mt-20 max-w-[96rem] text-lg text-white/45">Antimatter AI, © 2026. All rights reserved.</p>
+      <p className="mx-auto mt-20 max-w-[96rem] text-lg text-white/45">KHIDO, © 2026. Todos los derechos reservados.</p>
     </footer>
   );
 }

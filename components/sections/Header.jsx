@@ -21,7 +21,7 @@ export default function Header() {
     <header ref={ref} className="fixed left-0 right-0 top-0 z-50 px-5 py-5 md:px-8">
       <nav className="mx-auto flex max-w-[96rem] items-center justify-between gap-6">
         <a href="#top" className="text-xl font-medium tracking-wide text-white">
-          SYNETICAL
+          KHIDO 
         </a>
 
         <div className="hidden items-center gap-16 rounded-full text-sm font-medium text-white/85 md:flex">
