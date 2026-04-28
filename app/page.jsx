@@ -1,8 +1,8 @@
 import Header from "@/components/sections/Header";
 import HeroSection from "@/components/sections/HeroSection";
 import ServicesSection from "@/components/sections/ServicesSection";
-import CaseStudiesSection from "@/components/sections/CaseStudiesSection";
-import TrustedSection from "@/components/sections/TrustedSection";
+import ProcessSection from "@/components/sections/ProcessSection";
+import UseCasesSection from "@/components/sections/UseCasesSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
 
@@ -12,8 +12,8 @@ export default function Home() {
       <Header />
       <HeroSection />
       <ServicesSection />
-      <CaseStudiesSection />
-      <TrustedSection />
+      <ProcessSection />
+      <UseCasesSection />
       <CTASection />
       <Footer />
     </main>

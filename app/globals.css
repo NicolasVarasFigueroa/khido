@@ -8,7 +8,7 @@
   --text: #f8f7ff;
   --muted: rgba(248, 247, 255, 0.68);
   --line: rgba(255, 255, 255, 0.16);
-  --violet: #7772d8;
+  --calipso: #00BFCB;
 }
 
 * {
@@ -39,7 +39,7 @@ button {
 }
 
 ::selection {
-  background: rgba(119, 114, 216, 0.55);
+  background: rgba(0, 191, 203, 0.55);
 }
 
 .grain::after {
@@ -57,23 +57,23 @@ button {
 
 .light-ray {
   background:
-    radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(119, 114, 216, 0.75) 16%, rgba(34, 31, 105, 0.42) 34%, transparent 62%);
+    radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 0.85) 0%, rgba(0, 191, 203, 0.75) 16%, rgba(0, 38, 41, 0.42) 34%, transparent 62%);
   filter: blur(14px);
 }
 
 .orb-shadow {
-  background: radial-gradient(circle, rgba(119, 114, 216, 0.42), rgba(119, 114, 216, 0.09) 42%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 191, 203, 0.42), rgba(0, 191, 203, 0.09) 42%, transparent 70%);
 }
 
 .button-glow {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 0 24px rgba(130, 126, 226, 0.72),
-    0 14px 44px rgba(81, 77, 180, 0.45);
+    0 0 24px rgba(0, 191, 203, 0.72),
+    0 14px 44px rgba(0, 191, 203, 0.45);
 }
 
 .card-dots {
-  background-image: radial-gradient(rgba(194, 192, 255, 0.45) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(0, 191, 203, 0.45) 1.5px, transparent 1.5px);
   background-size: 22px 22px;
   mask-image: radial-gradient(circle at 100% 100%, black, transparent 46%);
 }
@@ -95,8 +95,23 @@ button {
 
 .footer-aura {
   background:
-    radial-gradient(ellipse at 0% 100%, rgba(119, 114, 216, 0.45), transparent 42%),
-    radial-gradient(ellipse at 100% 0%, rgba(119, 114, 216, 0.34), transparent 38%);
+    radial-gradient(ellipse at 0% 100%, rgba(0, 191, 203, 0.45), transparent 42%),
+    radial-gradient(ellipse at 100% 0%, rgba(0, 191, 203, 0.34), transparent 38%);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.team-card-anim {
+  animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

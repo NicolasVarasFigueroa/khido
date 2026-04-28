@@ -311,7 +311,7 @@ export default function ParticleMorphScene({
         }}
       >
         <ambientLight intensity={0.55} />
-        <pointLight position={[3, 2, 4]} intensity={1.5} color="#8985ff" />
+        <pointLight position={[3, 2, 4]} intensity={1.5} color="#00BFCB" />
 
         <MorphingParticles
           shape={shape}

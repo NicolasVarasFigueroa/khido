@@ -129,44 +129,8 @@ export default function ServicesSection() {
           },
         });
 
-        gsap.utils.toArray(".mobile-service-card").forEach((card) => {
-          gsap.from(card, {
-            opacity: 0,
-            y: 55,
-            scale: 0.94,
-            duration: 0.85,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 82%",
-              end: "top 55%",
-              toggleActions: "play none none reverse",
-            },
-          });
-        });
-
-        gsap.utils.toArray(".mobile-service-particles").forEach((item) => {
-          gsap.fromTo(
-            item,
-            {
-              opacity: 0,
-              scale: 0.78,
-              y: 25,
-            },
-            {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              duration: 1,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 85%",
-                toggleActions: "play none none reverse",
-              },
-            }
-          );
-        });
+        // Animaciones GSAP eliminadas para las tarjetas móviles.
+        // Esto permite que el carrusel CSS Snap funcione fluidamente a 60fps sin tirones.
       }, sectionRef);
 
       return () => ctx.revert();
@@ -183,8 +147,8 @@ export default function ServicesSection() {
     >
       {/* MOBILE */}
       <div className="mx-auto max-w-[96rem] md:hidden">
-        <div className="mobile-services-title mb-10">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.32em] text-violet-200/80">
+        <div className="mobile-services-title mb-6">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.32em] text-calipso-200/80">
             Servicios
           </p>
 
@@ -198,11 +162,17 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="space-y-5">
+        {/* Indicador visual de Swipe */}
+        <div className="flex items-center gap-2 mb-4 text-calipso-300 opacity-80 animate-pulse pl-1">
+          <span className="text-xs uppercase tracking-widest font-semibold">Desliza para explorar</span>
+          <span>→</span>
+        </div>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-8 -mx-5 px-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {services.map((service) => (
             <article
               key={service.title}
-              className="mobile-service-card relative overflow-hidden rounded-[1.4rem] border border-white/15 bg-black/70 p-6 backdrop-blur-sm will-change-transform"
+              className="shrink-0 w-[85vw] snap-center relative overflow-hidden rounded-[1.4rem] border border-white/15 bg-black/70 p-6 backdrop-blur-sm"
             >
               <div className="card-dots absolute inset-0 opacity-60" />
 
@@ -221,7 +191,7 @@ export default function ServicesSection() {
                   <ArrowUpRight className="shrink-0 text-white/80" size={28} />
                 </div>
 
-                <div className="mobile-service-particles mb-6 h-48 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] will-change-transform">
+                <div className="mb-6 h-48 w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02]">
                   <ParticleMorphScene
                     shape={service.shape}
                     compact
@@ -252,18 +222,16 @@ export default function ServicesSection() {
                   </div>
 
                   <div>
-                    <p className="mb-3 text-lg text-white/40">Tools</p>
+                    <p className="mb-3 text-lg text-white/40">Casos de Uso</p>
 
-                    <div className="flex flex-wrap gap-2">
-                      {service.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="grid h-9 w-9 place-items-center rounded-lg bg-white/90 text-xs font-black text-[#4d4b91]"
-                        >
-                          {tool}
-                        </span>
+                    <ul className="flex flex-col gap-2 text-sm font-medium leading-5 text-white/90">
+                      {service.useCases.map((uc) => (
+                        <li key={uc} className="flex items-start gap-2">
+                          <span className="shrink-0 text-calipso-400">✓</span>
+                          <span>{uc}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -307,7 +275,7 @@ export default function ServicesSection() {
                 }}
                 key={service.title}
                 className={`service-card relative h-[33rem] w-[24rem] shrink-0 origin-left overflow-hidden rounded-[1.45rem] border p-10 transition-[background,border-color,box-shadow] duration-500 ${isActive
-                    ? "border-violet-200/70 bg-[#4d4b91] shadow-[0_0_46px_rgba(119,114,216,0.22)]"
+                    ? "border-calipso-200/70 bg-[#0099A2] shadow-[0_0_46px_rgba(0,191,203,0.22)]"
                     : "border-white/25 bg-black/82 backdrop-blur-sm"
                   }`}
               >
@@ -349,18 +317,16 @@ export default function ServicesSection() {
                       </div>
 
                       <div>
-                        <p className="mb-3 text-2xl text-white/45">Tools</p>
+                        <p className="mb-3 text-xl text-white/45">Casos de Uso</p>
 
-                        <div className="grid grid-cols-3 gap-2">
-                          {service.tools.map((tool) => (
-                            <span
-                              key={tool}
-                              className="grid h-8 w-8 place-items-center rounded-md bg-white/85 text-xs font-black text-[#4d4b91]"
-                            >
-                              {tool}
-                            </span>
+                        <ul className="space-y-2 text-xs font-medium leading-4 text-white/90">
+                          {service.useCases.map((uc) => (
+                            <li key={uc} className="flex items-start gap-2">
+                              <span className="shrink-0 text-calipso-400">✓</span>
+                              <span>{uc}</span>
+                            </li>
                           ))}
-                        </div>
+                        </ul>
                       </div>
                     </div>
                   </div>

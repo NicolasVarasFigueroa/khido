@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Antimatter Inspired Rebuild",
-  description: "Original Next.js, GSAP, Lenis and Three.js inspired landing page."
+  title: "KHIDO",
+  description: "KHIDO - Plataforma Inteligente"
 };
 
 export default function RootLayout({ children }) {
