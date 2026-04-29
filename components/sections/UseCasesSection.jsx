@@ -7,25 +7,25 @@ import { Zap, TrendingUp, PieChart, Laptop } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useCases = [
+const benefits = [
   {
-    title: "Reducir carga operativa",
-    description: "Automatizamos tareas repetitivas y procesos internos.",
+    title: "Cero Tareas Manuales",
+    description: "Elimina el trabajo repetitivo de tu equipo. Automatizamos la carga de datos, correos y sincronización entre sistemas.",
     icon: Zap,
   },
   {
-    title: "Aumentar ventas",
-    description: "Sistemas inteligentes que capturan, responden y convierten clientes.",
+    title: "Aumento de Ventas",
+    description: "Implementamos agentes inteligentes que califican leads 24/7 y recuperan carritos abandonados automáticamente.",
     icon: TrendingUp,
   },
   {
-    title: "Tomar mejores decisiones",
-    description: "Datos claros y en tiempo real para gestionar tu negocio.",
+    title: "Decisiones Basadas en Data",
+    description: "Conectamos todas tus fuentes de información a dashboards en tiempo real para que dejes de adivinar.",
     icon: PieChart,
   },
   {
-    title: "Digitalizar tu empresa",
-    description: "Creamos plataformas, sistemas y flujos a medida.",
+    title: "Sistemas Propios",
+    description: "Desarrollamos la infraestructura web que necesitas (LMS, Portales B2B, E-commerce) para dejar de pagar software externo.",
     icon: Laptop,
   },
 ];
@@ -36,12 +36,12 @@ export default function UseCasesSection() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(".use-header", 
-        { y: 40, opacity: 0 },
+        { y: 28, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power3.out",
+          duration: 0.9,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 85%",
@@ -50,13 +50,13 @@ export default function UseCasesSection() {
       );
 
       gsap.fromTo(".use-card", 
-        { y: 60, opacity: 0 },
+        { y: 34, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
+          duration: 0.78,
+          stagger: 0.09,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 75%",
@@ -69,40 +69,46 @@ export default function UseCasesSection() {
   }, []);
 
   return (
-    <section id="use-cases" ref={sectionRef} className="relative bg-ink px-5 py-32 md:px-8">
-      <div className="absolute left-0 top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section id="use-cases" ref={sectionRef} className="relative bg-background px-5 py-36 md:px-8 md:py-40">
+      <div className="absolute inset-0 grid-background opacity-[0.16] pointer-events-none" />
+      <div className="noise-bg" />
+
+      <div className="absolute left-0 top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
       
-      <div className="mx-auto max-w-[96rem]">
-        <div className="use-header mb-16 max-w-3xl">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-calipso-300">
-            Casos de Uso
+      <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="use-header mb-16 max-w-3xl md:mb-20">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-calipso-300/80">
+            Beneficios Directos
           </p>
-          <h2 className="text-3xl font-light leading-tight tracking-[-0.04em] text-white md:text-5xl">
-            Soluciones con <span className="font-semibold italic">impacto real.</span>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white md:text-5xl mb-5">
+            El impacto de operar <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-calipso-300 to-white/70">con inteligencia.</span>
           </h2>
+          <p className="text-white/[0.54] text-lg leading-8 max-w-2xl">
+            Sistemas diseñados no solo para verse bien, sino para afectar directamente la última línea de tu estado de resultados.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {useCases.map((useCase, idx) => {
-            const Icon = useCase.icon;
+        <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {benefits.map((benefit, idx) => {
+            const Icon = benefit.icon;
             return (
               <div
                 key={idx}
-                className="use-card group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-white/[0.01] p-8 transition-all duration-500 hover:-translate-y-2 hover:border-calipso-500/30 hover:bg-white/[0.03]"
+                className="use-card bento-card group relative flex flex-col justify-between overflow-hidden rounded-2xl p-7 md:p-8"
               >
-                {/* Glow effect inside card */}
-                <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-calipso-500/20 opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-calipso-500/[0.07] opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
 
                 <div>
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/70 transition-colors duration-500 group-hover:border-calipso-500/30 group-hover:bg-calipso-500/10 group-hover:text-calipso-300">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/[0.025] border border-white/10 text-white/[0.58] transition-all duration-500 group-hover:border-calipso-500/25 group-hover:bg-calipso-500/[0.08] group-hover:text-calipso-300 group-hover:scale-[1.04]">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   
-                  <h3 className="mb-3 text-xl font-medium tracking-tight text-white">
-                    {useCase.title}
+                  <h3 className="mb-4 text-xl font-semibold tracking-tight text-white/90">
+                    {benefit.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-white/50 group-hover:text-white/70 transition-colors duration-500">
-                    {useCase.description}
+                  <p className="text-sm md:text-base leading-relaxed text-white/[0.54] group-hover:text-white/70 transition-colors duration-500">
+                    {benefit.description}
                   </p>
                 </div>
               </div>

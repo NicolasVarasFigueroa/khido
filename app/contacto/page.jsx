@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ContactoPage() {
   return (
-    <main className="relative min-h-screen overflow-x-clip bg-ink">
+    <main className="relative min-h-screen overflow-x-clip bg-background">
       <Header />
       <ContactPageSection />
       <Footer />

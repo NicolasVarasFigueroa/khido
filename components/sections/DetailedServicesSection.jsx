@@ -50,7 +50,7 @@ export default function DetailedServicesSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-ink pt-32 pb-24 md:pt-48 md:pb-40">
+    <section ref={containerRef} className="relative bg-background pt-32 pb-24 md:pt-48 md:pb-40">
       
       {/* Title */}
       <div className="px-5 mb-24 md:mb-32 services-hero-title max-w-[96rem] mx-auto text-center md:text-left">

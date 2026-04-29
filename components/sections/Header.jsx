@@ -19,15 +19,13 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Animamos solo el interior del header (nav) para no romper el 'fixed inset-0' del overlay con transformaciones CSS.
     gsap.fromTo(
       navRef.current,
-      { y: -24, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.9, ease: "power3.out", delay: 0.2 }
+      { y: -16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", delay: 0.15 }
     );
   }, []);
 
-  // Prevenir scroll cuando el menú está abierto
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -41,28 +39,26 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed left-0 right-0 top-0 z-50 px-5 py-5 md:px-8 transition-colors duration-300 ${isOpen ? "bg-transparent border-transparent" : "bg-ink/50 backdrop-blur-md border-b border-white/5 md:bg-transparent md:backdrop-blur-none md:border-transparent"}`}>
-        <nav ref={navRef} className="mx-auto flex max-w-[96rem] items-center justify-between gap-6">
+      <header className={`fixed left-0 right-0 top-0 z-50 px-4 py-4 md:px-8 transition-colors duration-300 ${isOpen ? "bg-transparent border-transparent" : "bg-background/45 backdrop-blur-xl border-b border-white/[0.06] md:bg-transparent md:border-transparent"}`}>
+        <nav ref={navRef} className="mx-auto flex max-w-[96rem] items-center justify-between gap-6 rounded-full border border-white/[0.08] bg-white/[0.025] px-4 py-3 backdrop-blur-xl md:px-5">
           <Link href="/" className="flex items-center relative z-[60]" onClick={() => setIsOpen(false)}>
-            <img src="/logo.png" alt="KHIDO Logo" className="h-7 sm:h-8 md:h-20 w-auto" />
+            <img src="/logo.png" alt="KHIDO Logo" className="h-7 sm:h-8 md:h-11 w-auto" />
           </Link>
 
-          {/* Botón Hamburguesa (Móvil) */}
-          <button 
-            className="md:hidden relative z-[60] text-white p-2"
+          <button
+            className="md:hidden relative z-[60] rounded-full border border-white/10 bg-white/[0.03] p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
             {isOpen ? <X size={26} strokeWidth={1.5} /> : <Menu size={26} strokeWidth={1.5} />}
           </button>
 
-          {/* Links (Desktop) */}
-          <div className="hidden items-center gap-16 rounded-full text-sm font-medium text-white/85 md:flex">
+          <div className="hidden items-center gap-10 rounded-full text-sm font-medium text-white/72 md:flex">
             {nav.map(({ label, href }) => (
               <Link
                 key={label}
                 href={href}
-                className={`transition hover:text-calipso-200 ${pathname === href ? "text-white" : ""
+                className={`transition duration-300 hover:text-white ${pathname === href ? "text-white" : ""
                   }`}
               >
                 {label}
@@ -70,24 +66,21 @@ export default function Header() {
             ))}
           </div>
 
-          {/* CTA (Desktop) */}
           <Link
             href="/contacto"
-            className="group hidden items-center gap-5 rounded-full border border-white/35 py-2 pl-7 pr-2 text-sm font-semibold text-white transition hover:border-white md:flex"
+            className="group hidden items-center gap-4 rounded-full border border-white/15 bg-white/[0.03] py-1.5 pl-5 pr-1.5 text-sm font-semibold text-white/88 transition duration-300 hover:border-white/25 hover:bg-white/[0.045] md:flex"
           >
             COMIENZA
-            <span className="grid h-11 w-14 place-items-center rounded-full bg-white text-black transition group-hover:rotate-45">
-              <ArrowUpRight size={24} />
+            <span className="grid h-9 w-11 place-items-center rounded-full bg-white text-black transition duration-300 group-hover:rotate-45">
+              <ArrowUpRight size={20} />
             </span>
           </Link>
         </nav>
       </header>
 
-      {/* Menú Overlay (Móvil) */}
-      <div 
-        className={`fixed inset-0 z-[45] flex flex-col items-center justify-center bg-black/95 backdrop-blur-xl transition-all duration-500 md:hidden ${
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        }`}
+      <div
+        className={`fixed inset-0 z-[45] flex flex-col items-center justify-center bg-black/95 backdrop-blur-xl transition-all duration-500 md:hidden ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col items-center gap-8 mt-10">
           {nav.map(({ label, href }) => (
@@ -95,14 +88,13 @@ export default function Header() {
               key={label}
               href={href}
               onClick={() => setIsOpen(false)}
-              className={`text-xl font-medium tracking-widest transition-colors ${
-                pathname === href ? "text-calipso-300" : "text-white/80 hover:text-white"
-              }`}
+              className={`text-xl font-medium tracking-widest transition-colors ${pathname === href ? "text-calipso-300" : "text-white/80 hover:text-white"
+                }`}
             >
               {label}
             </Link>
           ))}
-          
+
           <Link
             href="/contacto"
             onClick={() => setIsOpen(false)}

@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink: "#030304",
+        background: "#050507",
+        surface: "#0A0F12",
         calipso: {
           50: '#E0FAFC',
           100: '#B3F2F6',
@@ -21,8 +22,8 @@ module.exports = {
           800: '#004C51',
           900: '#002629',
         },
-        calipsoGlow: "#00BFCB",
-        panel: "#09090d"
+        calipsoGlow: "rgba(0,191,203,0.25)",
+        panel: "#0A0F12"
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"]

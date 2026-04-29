@@ -26,7 +26,7 @@ export default function ContactPageSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative bg-ink pt-36 pb-24 md:pt-48 md:pb-40 min-h-[90vh]">
+    <section ref={containerRef} className="relative bg-background pt-36 pb-24 md:pt-48 md:pb-40 min-h-[90vh]">
       <div className="mx-auto max-w-[96rem] px-5 md:px-8 flex flex-col lg:flex-row gap-16 lg:gap-24">
         
         {/* Lado Izquierdo: Info Directa */}
@@ -41,7 +41,7 @@ export default function ContactPageSection() {
 
           <div className="flex flex-col gap-5">
             {/* WhatsApp Card */}
-            <a href="https://wa.me/56900000000" target="_blank" rel="noreferrer" className="group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/5 bg-white/[0.02] transition-colors hover:border-[#25D366]/50 hover:bg-[#25D366]/5">
+            <a href="https://wa.me/56979872033" target="_blank" rel="noreferrer" className="group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/5 bg-white/[0.02] transition-colors hover:border-[#25D366]/50 hover:bg-[#25D366]/5">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] transition-transform group-hover:scale-110">
                 <MessageCircle size={28} />
               </div>

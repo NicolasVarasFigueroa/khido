@@ -179,7 +179,7 @@ export default function CompanySection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative bg-ink overflow-hidden">
+    <section ref={ref} className="relative bg-background overflow-hidden">
 
       {/* ── HERO BANNER ────────────────────────────────────────── */}
       <div className="relative px-5 pb-24 pt-36 md:px-8 md:pt-44">
