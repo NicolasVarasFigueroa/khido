@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: dark;
-  --bg: #050507;
-  --surface: #080d10;
+  --bg: #030712;
+  --surface: #071015;
   --text: #ffffff;
   --muted: rgba(255, 255, 255, 0.68);
   --line: rgba(255, 255, 255, 0.08);
@@ -49,7 +49,7 @@ button {
   inset: 0;
   z-index: 60;
   pointer-events: none;
-  opacity: 0.028;
+  opacity: 0.018;
   background-image:
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.4) 1px, transparent 0);
   background-size: 4px 4px;
@@ -58,50 +58,50 @@ button {
 
 .grid-background {
   background-size: 56px 56px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
   mask-image: linear-gradient(to bottom, transparent, black 14%, black 84%, transparent);
 }
 
 .light-ray {
   background:
-    radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 0.38) 0%, rgba(0, 191, 203, 0.28) 18%, rgba(0, 38, 41, 0.18) 36%, transparent 68%);
+    radial-gradient(ellipse at 0% 0%, rgba(255, 255, 255, 0.18) 0%, rgba(0, 191, 203, 0.18) 18%, rgba(0, 38, 41, 0.12) 36%, transparent 68%);
   filter: blur(18px);
 }
 
 .orb-shadow {
-  background: radial-gradient(circle, rgba(0, 191, 203, 0.18), rgba(0, 191, 203, 0.045) 44%, transparent 72%);
+  background: radial-gradient(circle, rgba(0, 191, 203, 0.11), rgba(0, 191, 203, 0.032) 44%, transparent 72%);
 }
 
 .button-glow {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-    0 0 18px rgba(0, 191, 203, 0.16),
-    0 14px 36px rgba(0, 0, 0, 0.24);
+    0 0 16px rgba(0, 191, 203, 0.11),
+    0 14px 36px rgba(0, 0, 0, 0.28);
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
 .button-glow:hover {
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.14) inset,
-    0 0 24px rgba(0, 191, 203, 0.22),
+    0 0 22px rgba(0, 191, 203, 0.18),
     0 18px 44px rgba(0, 0, 0, 0.32);
   transform: translateY(-1px);
 }
 
 .bento-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.018)), rgba(8, 13, 16, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 60px -42px rgba(0, 0, 0, 0.9);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.014)), rgba(5, 12, 18, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  box-shadow: 0 22px 76px -58px rgba(0, 0, 0, 0.96);
   backdrop-filter: blur(18px);
   transition: border-color 0.45s ease, background 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
 }
 
 .bento-card:hover {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02)), rgba(10, 15, 18, 0.78);
+  border-color: rgba(0, 191, 203, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.042), rgba(255, 255, 255, 0.018)), rgba(7, 15, 22, 0.74);
   transform: translateY(-2px);
-  box-shadow: 0 24px 70px -46px rgba(0, 0, 0, 0.92), 0 0 34px -22px rgba(0, 191, 203, 0.22);
+  box-shadow: 0 26px 82px -58px rgba(0, 0, 0, 0.96), 0 0 34px -26px rgba(0, 191, 203, 0.22);
 }
 
 .noise-bg {
@@ -109,12 +109,12 @@ button {
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  opacity: 0.014;
+  opacity: 0.008;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .card-dots {
-  background-image: radial-gradient(rgba(0, 191, 203, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 191, 203, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
   mask-image: radial-gradient(circle at 100% 100%, black, transparent 46%);
 }
@@ -136,8 +136,156 @@ button {
 
 .footer-aura {
   background:
-    radial-gradient(ellipse at 0% 100%, rgba(0, 191, 203, 0.12), transparent 44%),
-    radial-gradient(ellipse at 100% 0%, rgba(0, 191, 203, 0.09), transparent 40%);
+    radial-gradient(ellipse at 0% 100%, rgba(0, 191, 203, 0.075), transparent 44%),
+    radial-gradient(ellipse at 100% 0%, rgba(0, 191, 203, 0.055), transparent 40%);
+}
+
+.global-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #030712;
+}
+
+.ambient-base,
+.ambient-grid,
+.ambient-vignette {
+  position: absolute;
+  inset: 0;
+}
+
+.ambient-base {
+  background:
+    radial-gradient(ellipse at 50% -12%, rgba(0, 191, 203, 0.105), transparent 38%),
+    radial-gradient(ellipse at 8% 22%, rgba(0, 191, 203, 0.055), transparent 34%),
+    radial-gradient(ellipse at 92% 50%, rgba(51, 167, 255, 0.055), transparent 36%),
+    linear-gradient(180deg, #030712 0%, #040913 46%, #030712 100%);
+}
+
+.ambient-grid {
+  opacity: 0.24;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.014) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 50% 28%, black 0%, black 42%, transparent 74%);
+}
+
+.ambient-vignette {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.42), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.42)),
+    linear-gradient(180deg, rgba(3, 7, 18, 0.08), transparent 34%, rgba(3, 7, 18, 0.7));
+}
+
+.ambient-orb {
+  position: absolute;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 999px;
+  filter: blur(118px);
+  opacity: 0.28;
+  will-change: transform;
+}
+
+.ambient-orb-left {
+  left: -28rem;
+  top: 16vh;
+  background: rgba(0, 191, 203, 0.18);
+}
+
+.ambient-orb-right {
+  right: -30rem;
+  top: 44vh;
+  background: rgba(95, 220, 255, 0.13);
+}
+
+.ambient-lightline {
+  position: absolute;
+  top: 16vh;
+  width: 1px;
+  height: 62vh;
+  opacity: 0.22;
+  transform: scaleY(0.55);
+  transform-origin: top;
+  background: linear-gradient(to bottom, transparent, rgba(0, 191, 203, 0.38), transparent);
+  box-shadow: 0 0 24px rgba(0, 191, 203, 0.18);
+}
+
+.ambient-lightline-left {
+  left: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.ambient-lightline-right {
+  right: clamp(1.5rem, 4vw, 4.5rem);
+}
+
+.landing-section {
+  position: relative;
+  background: transparent;
+  isolation: isolate;
+}
+
+.landing-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(72rem, calc(100vw - 2.5rem));
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.075), rgba(0, 191, 203, 0.12), transparent);
+  pointer-events: none;
+}
+
+.section-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 191, 203, 0.035), transparent 42%),
+    linear-gradient(180deg, rgba(3, 7, 18, 0), rgba(3, 7, 18, 0.18) 50%, rgba(3, 7, 18, 0));
+}
+
+.premium-float {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 72px -58px rgba(0, 0, 0, 0.96);
+}
+
+.reveal-soft {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 767px) {
+  .global-atmosphere {
+    position: fixed;
+  }
+
+  .ambient-grid {
+    opacity: 0.14;
+    background-size: 56px 56px;
+  }
+
+  .ambient-orb {
+    width: 24rem;
+    height: 24rem;
+    filter: blur(90px);
+    opacity: 0.18;
+  }
+
+  .ambient-orb-left {
+    left: -17rem;
+  }
+
+  .ambient-orb-right {
+    right: -18rem;
+  }
+
+  .ambient-lightline {
+    display: none;
+  }
 }
 
 @keyframes fadeInUp {

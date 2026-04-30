@@ -7,6 +7,7 @@ import SectorHeroSection from "@/components/sections/SectorHeroSection";
 import SectorPainPointsSection from "@/components/sections/SectorPainPointsSection";
 import SectorServicesSection from "@/components/sections/SectorServicesSection";
 import SectorWorkflowSection from "@/components/sections/SectorWorkflowSection";
+import LandingAtmosphere from "@/components/effects/LandingAtmosphere";
 
 // Next.js 15+ requiere que params sea tratado como una promesa
 export async function generateMetadata({ params }) {
@@ -34,7 +35,8 @@ export default async function SectorPage({ params }) {
   }
 
   return (
-    <main className="relative min-h-screen overflow-x-clip bg-background">
+    <main className="relative min-h-screen overflow-x-clip bg-[#030712] text-white">
+      <LandingAtmosphere />
       <Header />
       <SectorHeroSection slug={resolvedParams.slug} />
       <SectorPainPointsSection slug={resolvedParams.slug} />

@@ -179,13 +179,16 @@ export default function CompanySection() {
   }, []);
 
   return (
-    <section ref={ref} className="relative bg-background overflow-hidden">
+    <section ref={ref} className="landing-section relative overflow-hidden">
+      <div className="noise-bg" />
+      <div className="section-veil" />
+      <div className="absolute inset-0 grid-background opacity-[0.075]" />
 
       {/* ── HERO BANNER ────────────────────────────────────────── */}
       <div className="relative px-5 pb-24 pt-36 md:px-8 md:pt-44">
         {/* Ambient top glow */}
         <div
-          className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-10"
+          className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-[0.085]"
           style={{ background: "radial-gradient(circle, #00BFCB 0%, transparent 65%)" }}
         />
 
@@ -198,7 +201,7 @@ export default function CompanySection() {
             <h1 className="co-h1 text-[13vw] font-semibold leading-[0.94] tracking-[-0.06em] text-white md:text-[7rem] xl:text-[8.5rem]">
               Somos
               <br />
-              <span className="font-light italic">Khido</span>
+              <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text font-light italic text-transparent">Khido</span>
             </h1>
 
             {/* Stats */}
@@ -233,12 +236,12 @@ export default function CompanySection() {
       </div>
 
       {/* ── PILLARS ─────────────────────────────────────────────── */}
-      <div className="co-pillars border-y border-white/10 px-5 py-16 md:px-8">
+      <div className="relative z-10 co-pillars border-y border-white/[0.075] bg-white/[0.012] px-5 py-16 backdrop-blur-sm md:px-8">
         <div className="mx-auto grid max-w-[96rem] gap-0 md:grid-cols-4">
           {pillars.map(({ label, description }, i) => (
             <div
               key={label}
-              className={`co-pillar group px-6 py-8 transition-colors hover:bg-white/[0.03] ${i < pillars.length - 1 ? "border-b border-white/10 md:border-b-0 md:border-r" : ""
+              className={`co-pillar group px-6 py-8 transition-colors hover:bg-white/[0.03] ${i < pillars.length - 1 ? "border-b border-white/[0.08] md:border-b-0 md:border-r" : ""
                 }`}
             >
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.32em] text-calipso-300/80">
@@ -251,7 +254,7 @@ export default function CompanySection() {
       </div>
 
       {/* ── TEAM GRID (2 rows × 3 cols) ─────────────────────────── */}
-      <div className="px-5 py-28 md:px-8 md:py-36">
+      <div className="relative z-10 px-5 py-28 md:px-8 md:py-36">
         <div className="mx-auto max-w-[96rem]">
 
           {/* Heading */}
@@ -276,7 +279,7 @@ export default function CompanySection() {
             {team.map(({ name, role, career }, index) => (
               <article
                 key={name}
-                className="team-card-anim group relative overflow-hidden rounded-[1.2rem] border border-white/10 bg-white/[0.02] px-4 py-8 text-center transition-[border-color,background,box-shadow] duration-500 hover:border-calipso-300/40 hover:bg-white/[0.05] hover:shadow-[0_0_30px_rgba(0,191,203,0.1)] flex flex-col justify-center items-center min-h-[140px]"
+                className="team-card-anim premium-float group relative overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-white/[0.026] px-4 py-8 text-center backdrop-blur-xl transition-[border-color,background,box-shadow] duration-500 hover:border-calipso-300/[0.24] hover:bg-white/[0.045] hover:shadow-[0_24px_80px_-64px_rgba(0,191,203,0.35)] flex flex-col justify-center items-center min-h-[140px]"
                 style={{ animationDelay: `${index * 0.05 + 0.1}s` }}
               >
                 <div className="card-dots absolute inset-0 opacity-20 pointer-events-none" />

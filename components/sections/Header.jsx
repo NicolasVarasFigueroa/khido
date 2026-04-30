@@ -40,14 +40,14 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed left-0 right-0 top-0 z-50 px-4 py-4 md:px-8 transition-colors duration-300 ${isOpen ? "bg-transparent border-transparent" : "bg-background/45 backdrop-blur-xl border-b border-white/[0.06] md:bg-transparent md:border-transparent"}`}>
-        <nav ref={navRef} className="mx-auto flex max-w-[96rem] items-center justify-between gap-6 rounded-full border border-white/[0.08] bg-white/[0.025] px-4 py-3 backdrop-blur-xl md:px-5">
+      <header className={`fixed left-0 right-0 top-0 z-50 px-4 py-4 md:px-8 transition-colors duration-300 ${isOpen ? "bg-transparent border-transparent" : "bg-[#030712]/45 backdrop-blur-xl border-b border-white/[0.045] md:bg-transparent md:border-transparent"}`}>
+        <nav ref={navRef} className="premium-float mx-auto flex max-w-[96rem] items-center justify-between gap-6 rounded-full border border-white/[0.08] bg-[#071018]/58 px-4 py-3 backdrop-blur-xl md:px-5">
           <Link href="/" className="flex items-center relative z-[60]" onClick={() => setIsOpen(false)}>
             <img src="/logo.png" alt="KHIDO Logo" className="h-14 sm:h-20 md:h-18 w-auto" />
           </Link>
 
           <button
-            className="md:hidden relative z-[60] rounded-full border border-white/10 bg-white/[0.03] p-2 text-white"
+            className="md:hidden relative z-[60] rounded-full border border-white/[0.08] bg-white/[0.026] p-2 text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -84,7 +84,7 @@ export default function Header() {
 
           <Link
             href="/contacto"
-            className="group hidden items-center gap-4 rounded-full border border-white/15 bg-white/[0.03] py-1.5 pl-5 pr-1.5 text-sm font-semibold 
+            className="group hidden items-center gap-4 rounded-full border border-white/[0.11] bg-white/[0.026] py-1.5 pl-5 pr-1.5 text-sm font-semibold 
             text-white/88 transition duration-300 hover:border-white/25 hover:bg-white/[0.045] md:flex"
           >
             COMIENZA

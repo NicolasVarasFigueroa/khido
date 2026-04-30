@@ -36,8 +36,9 @@ export default function SectorWorkflowSection({ slug }) {
   if (!sector || !sector.workflow) return null;
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-5 md:px-8 bg-background border-t border-white/5">
-      <div className="mx-auto max-w-6xl">
+    <section ref={sectionRef} className="landing-section relative overflow-hidden py-24 px-5 md:px-8">
+      <div className="section-veil" />
+      <div className="mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
             Cómo operará tu empresa <span className={`${sector.color} drop-shadow-md`}>con nosotros.</span>
@@ -53,7 +54,7 @@ export default function SectorWorkflowSection({ slug }) {
           
           {sector.workflow.map((step, idx) => (
             <div key={idx} className="workflow-step relative z-10 flex flex-col items-center text-center md:items-start md:text-left">
-              <div className={`w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center text-2xl font-semibold mb-6 bg-[#0a0a0a] shadow-lg ${sector.color}`}>
+              <div className={`premium-float w-16 h-16 rounded-2xl border border-white/[0.08] flex items-center justify-center text-2xl font-semibold mb-6 bg-white/[0.026] shadow-lg backdrop-blur-xl ${sector.color}`}>
                 {step.step}
               </div>
               <h4 className="text-lg font-medium text-white/90 mb-3">

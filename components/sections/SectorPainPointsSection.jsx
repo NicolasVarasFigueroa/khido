@@ -37,8 +37,9 @@ export default function SectorPainPointsSection({ slug }) {
   if (!sector || !sector.painPoints) return null;
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-5 md:px-8 bg-[#050505]">
-      <div className="mx-auto max-w-5xl">
+    <section ref={sectionRef} className="landing-section relative overflow-hidden py-24 px-5 md:px-8">
+      <div className="section-veil" />
+      <div className="mx-auto max-w-5xl relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
             El problema de operar <span className="text-white/40">como siempre.</span>
@@ -50,7 +51,7 @@ export default function SectorPainPointsSection({ slug }) {
           {sector.painPoints.map((point, idx) => (
             <div key={idx} className="pain-point-row grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* BEFORE */}
-              <div className="flex items-start gap-4 p-6 md:p-8 rounded-2xl border border-red-500/10 bg-red-500/[0.02]">
+              <div className="premium-float flex items-start gap-4 p-6 md:p-8 rounded-2xl border border-red-500/[0.12] bg-white/[0.022] backdrop-blur-xl">
                 <XCircle className="text-red-500/60 mt-1 shrink-0" size={24} />
                 <div>
                   <h4 className="text-red-500/80 font-medium mb-2 text-sm uppercase tracking-wider">Dolor Actual</h4>
@@ -61,7 +62,7 @@ export default function SectorPainPointsSection({ slug }) {
               </div>
 
               {/* AFTER */}
-              <div className="flex items-start gap-4 p-6 md:p-8 rounded-2xl border border-white/10 bg-white/[0.02] relative overflow-hidden group hover:border-white/20 transition-colors">
+              <div className="premium-float flex items-start gap-4 p-6 md:p-8 rounded-2xl border border-white/[0.08] bg-white/[0.026] relative overflow-hidden group backdrop-blur-xl hover:border-calipso-300/[0.18] transition-colors">
                 <div 
                   className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
                   style={{ backgroundColor: sector.glowColor }}

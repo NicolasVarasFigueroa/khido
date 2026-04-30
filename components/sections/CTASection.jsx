@@ -40,11 +40,12 @@ export default function CTASection() {
   }, []);
 
   return (
-    <section id="contact" ref={ref} className="relative bg-background px-5 py-28 md:px-8 md:py-36 border-t border-white/[0.06] overflow-hidden">
+    <section id="contact" ref={ref} className="landing-section relative px-5 py-28 md:px-8 md:py-36 overflow-hidden">
       <div className="noise-bg" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-calipso-300/20 to-transparent" />
-      <div className="cta-panel relative mx-auto min-h-[26rem] max-w-[96rem] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.025] p-8 shadow-[0_28px_90px_-58px_rgba(0,0,0,0.95)] backdrop-blur-xl md:p-24 lg:p-28">
-        <div className="cta-ribbon absolute -left-[8%] top-0 h-28 w-[78%] rotate-[-14deg] bg-calipso-500/[0.10] blur-3xl" />
+      <div className="section-veil" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-calipso-300/[0.14] to-transparent" />
+      <div className="cta-panel premium-float relative mx-auto min-h-[26rem] max-w-[96rem] overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-white/[0.022] p-8 backdrop-blur-xl md:p-24 lg:p-28">
+        <div className="cta-ribbon absolute -left-[8%] top-0 h-28 w-[78%] rotate-[-14deg] bg-calipso-500/[0.07] blur-3xl" />
         <div className="relative z-10 max-w-2xl">
           <h2 className="text-4xl font-light leading-[1.08] tracking-tight text-white md:text-6xl">
             No vendemos herramientas.

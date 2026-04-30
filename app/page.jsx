@@ -6,10 +6,12 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import UseCasesSection from "@/components/sections/UseCasesSection";
 import CTASection from "@/components/sections/CTASection";
 import Footer from "@/components/sections/Footer";
+import LandingAtmosphere from "@/components/effects/LandingAtmosphere";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-background">
+    <main className="relative min-h-screen overflow-x-clip bg-[#030712] text-white">
+      <LandingAtmosphere />
       <Header />
       <HeroSection />
       <SolutionsCarouselSection />

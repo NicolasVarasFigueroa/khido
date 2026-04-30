@@ -69,11 +69,12 @@ export default function UseCasesSection() {
   }, []);
 
   return (
-    <section id="use-cases" ref={sectionRef} className="relative bg-background px-5 py-36 md:px-8 md:py-40">
-      <div className="absolute inset-0 grid-background opacity-[0.16] pointer-events-none" />
+    <section id="use-cases" ref={sectionRef} className="landing-section relative px-5 py-36 md:px-8 md:py-40">
+      <div className="section-veil" />
+      <div className="absolute inset-0 grid-background opacity-[0.075] pointer-events-none" />
       <div className="noise-bg" />
 
-      <div className="absolute left-0 top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute left-0 top-0 h-[1px] w-full bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
       
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="use-header mb-16 max-w-3xl md:mb-20">
@@ -97,10 +98,10 @@ export default function UseCasesSection() {
                 key={idx}
                 className="use-card bento-card group relative flex flex-col justify-between overflow-hidden rounded-2xl p-7 md:p-8"
               >
-                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-calipso-500/[0.07] opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-calipso-500/[0.045] opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100" />
 
                 <div>
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/[0.025] border border-white/10 text-white/[0.58] transition-all duration-500 group-hover:border-calipso-500/25 group-hover:bg-calipso-500/[0.08] group-hover:text-calipso-300 group-hover:scale-[1.04]">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white/[0.018] border border-white/[0.08] text-white/[0.58] transition-all duration-500 group-hover:border-calipso-500/[0.22] group-hover:bg-calipso-500/[0.06] group-hover:text-calipso-300 group-hover:scale-[1.04]">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   

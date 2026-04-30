@@ -10,7 +10,7 @@ const columns = {
 export default function Footer() {
 
   return (
-    <footer className="footer-aura relative bg-background px-5 pb-10 pt-32 md:px-8 md:pt-36">
+    <footer className="footer-aura landing-section relative px-5 pb-10 pt-32 md:px-8 md:pt-36">
       <div className="mx-auto grid max-w-[96rem] gap-14 md:grid-cols-[1.25fr_2fr] md:gap-16">
         
         <div className="space-y-8">

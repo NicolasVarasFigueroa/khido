@@ -36,15 +36,16 @@ export default function SectorServicesSection({ slug }) {
   if (!sector) return null;
 
   return (
-    <section ref={sectionRef} className="relative py-24 px-5 md:px-8 bg-background">
-      <div className="mx-auto max-w-6xl">
+    <section ref={sectionRef} className="landing-section relative overflow-hidden py-24 px-5 md:px-8">
+      <div className="section-veil" />
+      <div className="mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {sector.solutions.map((solution, idx) => {
             const Icon = solution.icon;
             return (
               <div 
                 key={idx} 
-                className="solution-card group relative flex flex-col p-8 md:p-10 rounded-3xl border border-white/5 bg-[#0a0a0a] overflow-hidden transition-all duration-500 hover:border-white/10 hover:bg-[#0f0f0f]"
+                className="solution-card premium-float group relative flex flex-col p-8 md:p-10 rounded-3xl border border-white/[0.08] bg-white/[0.026] overflow-hidden backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.18] hover:bg-white/[0.045]"
               >
                 {/* Subtle Hover Glow inside card */}
                 <div 

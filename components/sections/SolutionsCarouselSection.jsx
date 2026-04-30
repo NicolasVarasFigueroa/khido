@@ -131,11 +131,12 @@ export default function SolutionsCarouselSection() {
   const RightIcon = activeScenario.rightIcon;
 
   return (
-    <section ref={sectionRef} className="relative bg-background px-5 py-36 md:px-8 md:py-40 overflow-hidden">
+    <section ref={sectionRef} className="landing-section relative px-5 py-36 md:px-8 md:py-40 overflow-hidden">
       <div className="noise-bg" />
+      <div className="section-veil" />
       {/* Background Grid & Glow Patterns */}
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_62%,transparent_100%)]" />
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-calipso-500/[0.035] blur-[140px] pointer-events-none" />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:64px_64px] opacity-70 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_46%,transparent_100%)]" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-calipso-500/[0.024] blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl text-center">
         <div className="solutions-header mb-24 md:mb-28">
@@ -154,7 +155,7 @@ export default function SolutionsCarouselSection() {
             
             {/* Left Box */}
             <div key={`left-${activeIdx}`} className="flex flex-col items-center gap-5 w-28 md:w-36 animate-slide-up">
-              <div className="group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.018] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-500 hover:border-white/[0.18] hover:bg-white/[0.03]">
+              <div className="premium-float group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.18] hover:bg-white/[0.028]">
                 <LeftIcon className={`h-10 w-10 md:h-12 md:w-12 ${activeScenario.leftColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
               </div>
               <span className="text-sm font-medium tracking-wide text-white/70">
@@ -163,31 +164,31 @@ export default function SolutionsCarouselSection() {
             </div>
 
             {/* Connecting Line Left */}
-            <div className="relative flex-1 h-px bg-white/10 rounded-full overflow-hidden hidden md:block mx-2">
-              <div className="absolute top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-calipso-300 to-transparent opacity-50 animate-[slideRight_2.8s_ease-in-out_infinite]" />
+            <div className="relative flex-1 h-px bg-white/[0.08] rounded-full overflow-hidden hidden md:block mx-2">
+              <div className="absolute top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-calipso-200 to-transparent opacity-35 animate-[slideRight_3.8s_ease-in-out_infinite]" />
             </div>
 
             {/* Center Box (KHIDO) */}
             <div className="relative z-20 flex flex-col items-center w-36 md:w-48">
-              <div className="relative flex h-28 w-28 md:h-36 md:w-36 items-center justify-center rounded-[1.75rem] border border-calipso-500/20 bg-white/[0.025] shadow-[0_0_34px_rgba(0,191,203,0.08)] backdrop-blur-xl overflow-hidden">
+              <div className="premium-float relative flex h-28 w-28 md:h-36 md:w-36 items-center justify-center rounded-[1.75rem] border border-calipso-300/[0.16] bg-white/[0.018] backdrop-blur-xl overflow-hidden">
                 {/* Rotating Glow Ring */}
-                <div className="absolute inset-0 rounded-[1.75rem] animate-[spin_10s_linear_infinite] before:absolute before:inset-[-50%] before:bg-[conic-gradient(from_0deg,transparent_0_342deg,rgba(0,191,203,0.34)_360deg)] opacity-35" />
+                <div className="absolute inset-0 rounded-[1.75rem] animate-[spin_16s_linear_infinite] before:absolute before:inset-[-50%] before:bg-[conic-gradient(from_0deg,transparent_0_342deg,rgba(0,191,203,0.22)_360deg)] opacity-30" />
                 <div className="absolute inset-[1px] rounded-[calc(1.75rem-1px)] bg-surface" />
                 {/* Inner Glow */}
-                <div className="absolute inset-0 bg-calipso-500/[0.055] blur-xl" />
+                <div className="absolute inset-0 bg-calipso-500/[0.035] blur-xl" />
                 
                 <img src="/logo.png" alt="KHIDO" className="relative z-10 w-16 md:w-24 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.14)]" />
               </div>
             </div>
 
             {/* Connecting Line Right */}
-            <div className="relative flex-1 h-px bg-white/10 rounded-full overflow-hidden hidden md:block mx-2">
-              <div className="absolute top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-calipso-300 to-transparent opacity-45 animate-[slideRight_2.8s_ease-in-out_infinite_0.5s]" />
+            <div className="relative flex-1 h-px bg-white/[0.08] rounded-full overflow-hidden hidden md:block mx-2">
+              <div className="absolute top-0 bottom-0 w-32 bg-gradient-to-r from-transparent via-calipso-200 to-transparent opacity-32 animate-[slideRight_3.8s_ease-in-out_infinite_0.5s]" />
             </div>
 
             {/* Right Box */}
             <div key={`right-${activeIdx}`} className="flex flex-col items-center gap-5 w-28 md:w-36 animate-slide-up-delayed">
-              <div className="group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.018] backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)] transition-all duration-500 hover:border-white/[0.18] hover:bg-white/[0.03]">
+              <div className="premium-float group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.18] hover:bg-white/[0.028]">
                 <RightIcon className={`h-10 w-10 md:h-12 md:w-12 ${activeScenario.rightColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
               </div>
               <span className="text-sm font-medium tracking-wide text-white/70">
@@ -214,7 +215,7 @@ export default function SolutionsCarouselSection() {
                 key={idx}
                 onClick={() => setActiveIdx(idx)}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
-                  activeIdx === idx ? "w-8 bg-calipso-300 shadow-[0_0_10px_rgba(0,191,203,0.24)]" : "w-2 bg-white/[0.16] hover:bg-white/30"
+                  activeIdx === idx ? "w-8 bg-calipso-300 shadow-[0_0_10px_rgba(0,191,203,0.18)]" : "w-2 bg-white/[0.14] hover:bg-white/[0.28]"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />

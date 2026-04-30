@@ -94,8 +94,9 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" ref={sectionRef} className="relative bg-background px-5 pb-36 pt-20 md:px-8 md:pt-24 border-b border-white/[0.06]">
-      <div className="absolute inset-0 grid-background opacity-[0.18] pointer-events-none" />
+    <section id="process" ref={sectionRef} className="landing-section relative px-5 pb-36 pt-20 md:px-8 md:pt-24">
+      <div className="section-veil" />
+      <div className="absolute inset-0 grid-background opacity-[0.08] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="process-header mb-16 max-w-2xl md:mb-20">
@@ -118,11 +119,11 @@ export default function ProcessSection() {
                 key={idx} 
                 className={`bento-item bento-card relative overflow-hidden rounded-2xl p-7 md:p-8 flex flex-col justify-between group cursor-default ${step.span}`}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-calipso-500/0 via-calipso-500/0 to-calipso-500/[0.035] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-br from-calipso-500/0 via-calipso-500/0 to-calipso-500/[0.026] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
                 {step.graphic}
 
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.03] border border-white/10 group-hover:border-calipso-500/25 transition-colors duration-500">
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.022] border border-white/[0.08] group-hover:border-calipso-500/[0.22] transition-colors duration-500">
                   <Icon size={20} className="text-white/75 group-hover:text-calipso-300 transition-colors duration-500" />
                 </div>
                 
