@@ -1,4 +1,5 @@
 "use client";
+import { Linkedin, Instagram, Mail, MessageCircle } from "lucide-react";
 
 const columns = {
   Servicios: ["Desarrollo Web", "Sistemas y Plataformas", "Automatización de Procesos", "Business Intelligence"],
@@ -11,15 +12,73 @@ export default function Footer() {
   return (
     <footer className="footer-aura relative bg-background px-5 pb-10 pt-32 md:px-8 md:pt-36">
       <div className="mx-auto grid max-w-[96rem] gap-14 md:grid-cols-[1.25fr_2fr] md:gap-16">
-        <div>
-          <a href="mailto:ventas@khido.cl" className="text-2xl font-light tracking-tight text-white/90 transition-colors hover:text-calipso-300 md:text-3xl">ventas@khido.cl</a>
-          <a href="#" className="mt-4 block w-max border-b border-white/20 pb-1 text-base text-white/60 transition-colors hover:border-calipso-300/50 hover:text-white md:text-lg">LinkedIn ↗</a>
+        
+        <div className="space-y-8">
+          {/* Logo */}
+          <div className="flex items-center">
+            <img
+              src="/logo.png"
+              alt="KHIDO Logo"
+              className="h-16 sm:h-20 md:h-24 w-auto object-contain opacity-90 transition-all duration-300 hover:opacity-100 hover:scale-105"
+            />
+          </div>
 
-          <p className="mt-12 text-base text-white/45 md:text-lg">
+          {/* Redes */}
+          <div className="flex flex-col gap-4">
+            {/* LinkedIn */}
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 text-white/60 transition-all duration-300 hover:text-white"
+            >
+              <Linkedin size={18} className="transition-colors group-hover:text-calipso-300" />
+              <span className="border-b border-white/20 pb-1 transition-all group-hover:border-calipso-300/60">
+                LinkedIn
+              </span>
+            </a>
+
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/56973011954"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 text-white/60 transition-all duration-300 hover:text-white"
+            >
+              <MessageCircle size={18} className="transition-colors group-hover:text-green-400" />
+              <span className="border-b border-white/20 pb-1 transition-all group-hover:border-green-400/60">
+                WhatsApp
+              </span>
+            </a>
+
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/tuusuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 text-white/60 transition-all duration-300 hover:text-white"
+            >
+              <Instagram size={18} className="transition-colors group-hover:text-pink-400" />
+              <span className="border-b border-white/20 pb-1 transition-all group-hover:border-pink-400/60">
+                Instagram
+              </span>
+            </a>
+          </div>
+
+          {/* Email */}
+          <a
+            href="mailto:ventas@khido.cl"
+            className="group flex items-center gap-3 text-white/80 transition-all duration-300 hover:text-calipso-300"
+          >
+            <Mail size={18} className="transition-colors group-hover:text-calipso-300" />
+            <span className="hover:tracking-wide">ventas@khido.cl</span>
+          </a>
+
+          {/* Ubicación */}
+          <p className="text-base text-white/40 md:text-lg">
             Santiago, Chile
           </p>
         </div>
-
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           {Object.entries(columns).map(([title, links]) => (
             <div key={title}>
