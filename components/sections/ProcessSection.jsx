@@ -94,49 +94,49 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" ref={sectionRef} className="landing-section relative px-5 pb-36 pt-20 md:px-8 md:pt-24">
+    <section id="process" ref={sectionRef} className="landing-section relative px-5 pb-28 pt-20 md:px-8 md:pb-36 md:pt-24">
       <div className="section-veil" />
       <div className="absolute inset-0 grid-background opacity-[0.08] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <div className="process-header mb-16 max-w-2xl md:mb-20">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-calipso-300/80">
+        <div className="process-header mb-14 max-w-2xl md:mb-20">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-calipso-300/[0.82]">
             METODOLOGÍA KHIDO
           </p>
-          <h2 className="text-4xl font-semibold tracking-tight text-white md:text-5xl mb-5">
+          <h2 className="mb-5 text-4xl font-semibold leading-[1.12] tracking-tight text-white md:text-5xl">
             Cómo lo <span className="text-transparent bg-clip-text bg-gradient-to-r from-calipso-300 to-white/70">hacemos.</span>
           </h2>
-          <p className="text-white/[0.54] text-lg leading-8">
+          <p className="text-base leading-8 text-white/[0.6] md:text-lg">
             Un proceso iterativo diseñado para desplegar sistemas corporativos rápidos, seguros y escalables.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 auto-rows-[280px]">
+        <div className="grid grid-cols-1 gap-4 md:auto-rows-[18rem] md:grid-cols-3 md:gap-6">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <div 
                 key={idx} 
-                className={`bento-item bento-card relative overflow-hidden rounded-2xl p-7 md:p-8 flex flex-col justify-between group cursor-default ${step.span}`}
+                className={`bento-item bento-card group relative flex min-h-[17rem] cursor-default flex-col justify-between overflow-hidden rounded-lg p-6 md:min-h-0 md:p-7 ${step.span}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-calipso-500/0 via-calipso-500/0 to-calipso-500/[0.026] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 
                 {step.graphic}
 
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.022] border border-white/[0.08] group-hover:border-calipso-500/[0.22] transition-colors duration-500">
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-lg bg-white/[0.026] border border-white/[0.09] group-hover:border-calipso-500/[0.24] transition-colors duration-500">
                   <Icon size={20} className="text-white/75 group-hover:text-calipso-300 transition-colors duration-500" />
                 </div>
                 
                 <div className="relative z-10 mt-auto">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="mb-3 flex flex-wrap items-center gap-3">
                     <span className="text-xs font-mono font-medium px-2 py-1 bg-white/[0.04] rounded text-white/40">
                       {step.num}
                     </span>
-                    <h3 className="text-xl md:text-2xl font-semibold tracking-tight text-white/90">
+                    <h3 className="text-xl font-semibold leading-snug tracking-tight text-white/[0.92] md:text-[1.45rem]">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="text-sm md:text-base leading-relaxed text-white/50 max-w-md">
+                  <p className="max-w-md text-sm leading-7 text-white/[0.58] md:text-base">
                     {step.description}
                   </p>
                 </div>

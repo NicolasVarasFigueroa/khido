@@ -152,7 +152,7 @@ export async function POST(request) {
     return NextResponse.json(
       {
         ok: false,
-        message: "No pudimos enviar el mensaje. Inténtalo nuevamente o escríbenos por WhatsApp."
+        message: "No pudimos enviar el mensaje. Inténtalo nuevamente o escríbenos a contacto@khido.cl."
       },
       { status: 500 }
     );

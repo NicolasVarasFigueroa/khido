@@ -131,7 +131,7 @@ export default function SolutionsCarouselSection() {
   const RightIcon = activeScenario.rightIcon;
 
   return (
-    <section ref={sectionRef} className="landing-section relative px-5 py-36 md:px-8 md:py-40 overflow-hidden">
+    <section id="services" ref={sectionRef} className="landing-section relative overflow-hidden px-5 py-28 md:px-8 md:py-36 lg:py-40">
       <div className="noise-bg" />
       <div className="section-veil" />
       {/* Background Grid & Glow Patterns */}
@@ -139,26 +139,26 @@ export default function SolutionsCarouselSection() {
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-calipso-500/[0.024] blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-6xl text-center">
-        <div className="solutions-header mb-24 md:mb-28">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.3em] text-calipso-300/80">
+        <div className="solutions-header mb-16 md:mb-24">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-calipso-300/[0.82]">
             INTEGRACIÓN TOTAL
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-[3.65rem] font-light tracking-tight text-white leading-[1.08]">
+          <h2 className="text-4xl font-light leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.45rem]">
             Tú te enfocas en liderar, <br className="hidden md:block" />
             <span className="font-semibold text-calipso-300 drop-shadow-[0_0_18px_rgba(0,191,203,0.18)]">KHIDO</span> opera el día a día.
           </h2>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center min-h-[340px]">
+        <div className="relative flex min-h-[320px] flex-col items-center justify-center md:min-h-[340px]">
           
-          <div className="flex w-full max-w-4xl items-center justify-center gap-3 md:gap-6">
+          <div className="flex w-full max-w-4xl items-center justify-center gap-2 sm:gap-3 md:gap-6">
             
             {/* Left Box */}
-            <div key={`left-${activeIdx}`} className="flex flex-col items-center gap-5 w-28 md:w-36 animate-slide-up">
-              <div className="premium-float group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.18] hover:bg-white/[0.028]">
-                <LeftIcon className={`h-10 w-10 md:h-12 md:w-12 ${activeScenario.leftColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
+            <div key={`left-${activeIdx}`} className="flex w-24 animate-slide-up flex-col items-center gap-4 sm:w-28 md:w-36 md:gap-5">
+              <div className="premium-float group flex h-20 w-20 items-center justify-center rounded-lg border border-white/[0.09] bg-white/[0.018] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.22] hover:bg-white/[0.034] sm:h-24 sm:w-24 md:h-28 md:w-28">
+                <LeftIcon className={`h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 ${activeScenario.leftColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
               </div>
-              <span className="text-sm font-medium tracking-wide text-white/70">
+              <span className="text-center text-xs font-medium tracking-wide text-white/[0.72] sm:text-sm">
                 {activeScenario.leftLabel}
               </span>
             </div>
@@ -169,15 +169,15 @@ export default function SolutionsCarouselSection() {
             </div>
 
             {/* Center Box (KHIDO) */}
-            <div className="relative z-20 flex flex-col items-center w-36 md:w-48">
-              <div className="premium-float relative flex h-28 w-28 md:h-36 md:w-36 items-center justify-center rounded-[1.75rem] border border-calipso-300/[0.16] bg-white/[0.018] backdrop-blur-xl overflow-hidden">
+            <div className="relative z-20 flex w-28 flex-col items-center sm:w-36 md:w-48">
+              <div className="premium-float relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-lg border border-calipso-300/[0.18] bg-white/[0.022] backdrop-blur-xl sm:h-28 sm:w-28 md:h-36 md:w-36">
                 {/* Rotating Glow Ring */}
-                <div className="absolute inset-0 rounded-[1.75rem] animate-[spin_16s_linear_infinite] before:absolute before:inset-[-50%] before:bg-[conic-gradient(from_0deg,transparent_0_342deg,rgba(0,191,203,0.22)_360deg)] opacity-30" />
-                <div className="absolute inset-[1px] rounded-[calc(1.75rem-1px)] bg-surface" />
+                <div className="absolute inset-0 rounded-lg animate-[spin_16s_linear_infinite] before:absolute before:inset-[-50%] before:bg-[conic-gradient(from_0deg,transparent_0_342deg,rgba(0,191,203,0.24)_360deg)] opacity-35" />
+                <div className="absolute inset-[1px] rounded-[7px] bg-surface" />
                 {/* Inner Glow */}
                 <div className="absolute inset-0 bg-calipso-500/[0.035] blur-xl" />
                 
-                <img src="/logo.png" alt="KHIDO" className="relative z-10 w-16 md:w-24 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.14)]" />
+                <img src="/logo.png" alt="KHIDO" className="relative z-10 w-14 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.14)] sm:w-16 md:w-24" />
               </div>
             </div>
 
@@ -187,11 +187,11 @@ export default function SolutionsCarouselSection() {
             </div>
 
             {/* Right Box */}
-            <div key={`right-${activeIdx}`} className="flex flex-col items-center gap-5 w-28 md:w-36 animate-slide-up-delayed">
-              <div className="premium-float group flex h-24 w-24 md:h-28 md:w-28 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.015] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.18] hover:bg-white/[0.028]">
-                <RightIcon className={`h-10 w-10 md:h-12 md:w-12 ${activeScenario.rightColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
+            <div key={`right-${activeIdx}`} className="flex w-24 animate-slide-up-delayed flex-col items-center gap-4 sm:w-28 md:w-36 md:gap-5">
+              <div className="premium-float group flex h-20 w-20 items-center justify-center rounded-lg border border-white/[0.09] bg-white/[0.018] backdrop-blur-xl transition-all duration-500 hover:border-calipso-300/[0.22] hover:bg-white/[0.034] sm:h-24 sm:w-24 md:h-28 md:w-28">
+                <RightIcon className={`h-9 w-9 sm:h-10 sm:w-10 md:h-12 md:w-12 ${activeScenario.rightColor} opacity-90 filter drop-shadow-sm`} strokeWidth={1.5} />
               </div>
-              <span className="text-sm font-medium tracking-wide text-white/70">
+              <span className="text-center text-xs font-medium tracking-wide text-white/[0.72] sm:text-sm">
                 {activeScenario.rightLabel}
               </span>
             </div>
@@ -199,22 +199,22 @@ export default function SolutionsCarouselSection() {
           </div>
 
           {/* Description Text */}
-          <div className="mt-16 flex items-center justify-center px-4">
+          <div className="mt-12 flex items-center justify-center px-2 md:mt-16 md:px-4">
             <p 
               key={`text-${activeIdx}`} 
-              className="text-lg md:text-xl font-light text-white/[0.58] animate-fade-in-up"
+              className="max-w-2xl animate-fade-in-up text-center text-base font-light leading-7 text-white/[0.66] md:text-xl md:leading-8"
             >
               {activeScenario.text}
             </p>
           </div>
 
           {/* Dots Navigation */}
-          <div className="mt-12 flex flex-wrap justify-center gap-2 px-4">
+          <div className="mt-10 flex flex-wrap justify-center gap-2 px-4 md:mt-12">
             {scenarios.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIdx(idx)}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
+                className={`h-2 rounded-full transition-all duration-500 ${
                   activeIdx === idx ? "w-8 bg-calipso-300 shadow-[0_0_10px_rgba(0,191,203,0.18)]" : "w-2 bg-white/[0.14] hover:bg-white/[0.28]"
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}

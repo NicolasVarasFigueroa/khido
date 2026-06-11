@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ArrowRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 const initialForm = {
   name: "",
@@ -91,26 +91,14 @@ export default function ContactPageSection() {
           </p>
 
           <div className="flex flex-col gap-5">
-            {/* WhatsApp Card */}
-            <a href="https://wa.me/56979872033" target="_blank" rel="noreferrer" className="premium-float group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.026] backdrop-blur-xl transition-colors hover:border-[#25D366]/40 hover:bg-[#25D366]/[0.045]">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#25D366]/10 text-[#25D366] transition-transform group-hover:scale-110">
-                <MessageCircle size={28} />
-              </div>
-              <div>
-                <p className="text-white font-medium text-lg mb-1">WhatsApp</p>
-                <p className="text-white/50 text-sm">Escríbenos para una respuesta rápida</p>
-              </div>
-              <ArrowRight className="ml-auto text-white/20 transition-transform group-hover:translate-x-2 group-hover:text-[#25D366]" />
-            </a>
-
             {/* Correo Card */}
-            <a href="mailto:ventas@khido.cl" className="premium-float group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.026] backdrop-blur-xl transition-colors hover:border-calipso-300/[0.24] hover:bg-calipso-500/[0.045]">
+            <a href="mailto:contacto@khido.cl" className="premium-float group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.026] backdrop-blur-xl transition-colors hover:border-calipso-300/[0.24] hover:bg-calipso-500/[0.045]">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-calipso-500/10 text-calipso-400 transition-transform group-hover:scale-110">
                 <Mail size={28} />
               </div>
               <div>
                 <p className="text-white font-medium text-lg mb-1">Correo Electrónico</p>
-                <p className="text-white/50 text-sm">ventas@khido.cl</p>
+                <p className="text-white/50 text-sm">contacto@khido.cl</p>
               </div>
               <ArrowRight className="ml-auto text-white/20 transition-transform group-hover:translate-x-2 group-hover:text-calipso-400" />
             </a>

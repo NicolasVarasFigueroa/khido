@@ -1,102 +1,35 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const ACCENT = "from-calipso-500 to-calipso-600";
 
 const team = [
   {
     name: "Nicolás Varas",
     role: "CEO & Fundador",
     career: "Ingeniero Informático",
-    description: "Visionario en automatización e inteligencia de negocios. Lidera la estrategia tecnológica para transformar operaciones y escalar negocios.",
-    initials: "NV",
-    tags: ["Automatización", "BI", "Liderazgo"],
+    image: "/team/nicolas-varas.jpeg",
   },
   {
     name: "Giancarlos Ricci",
     role: "CTO & Fundador",
     career: "Ingeniero Civil Telemática",
-    description: "Especialista en inteligencia artificial y arquitecturas de datos. Diseña modelos predictivos que convierten información cruda en ventajas competitivas.",
-    initials: "GR",
-    tags: ["IA", "Machine Learning", "Data"],
+    image: "/team/giancarlos-ricci.jpeg",
   },
   {
-    name: "Jerson Leinlaf",
+    name: "Jerson Lienlaf",
     role: "CMO & Fundador",
     career: "Ingeniero Informático",
-    description: "Lidera la estrategia comercial, conectando soluciones tecnológicas con necesidades reales para impulsar el crecimiento y ROI de cada cliente.",
-    initials: "JL",
-    tags: ["Comercial", "Estrategia", "Ventas"],
+    image: "/team/jerson-lienlaf.jpeg",
   },
   {
     name: "Gonzalo Yañez",
     role: "Tech Lead Dev",
     career: "Ingeniero Informático",
-    description: "Arquitecto de software full-stack. Construye plataformas de alto rendimiento, integrando sistemas complejos de manera fluida y altamente escalable.",
-    initials: "GY",
-    tags: ["Frontend", "Backend", "APIs"],
-  },
-  {
-    name: "Catalina Galdames",
-    role: "Diseño Gráfico & Marketing",
-    career: "Diseñadora Gráfica",
-    description: "Responsable de la identidad visual y estrategias de marketing. Genera experiencias de marca memorables y diseños altamente intuitivos.",
-    initials: "CG",
-    tags: ["Diseño", "Marketing", "Branding"],
-  },
-  {
-    name: "José Vergara",
-    role: "Analista BI",
-    career: "Ingeniero Informático",
-    description: "Especialista en análisis y visualización de datos. Desarrolla dashboards ejecutivos en tiempo real para acelerar la toma de decisiones estratégicas.",
-    initials: "JV",
-    tags: ["Power BI", "Data", "Dashboards"],
-  },
-  {
-    name: "Fabián Montenegro",
-    role: "AI Engineer",
-    career: "Ingeniero Informático",
-    description: "Experto en RPA y flujos de trabajo inteligentes. Elimina la carga operativa conectando plataformas para que los equipos ganen velocidad.",
-    initials: "FM",
-    tags: ["RPA", "n8n", "Workflows"],
-  },
-  {
-    name: "Manuel Ardiles",
-    role: "AI Engineer",
-    career: "Ingeniero Informático",
-    description: "Desarrollador enfocado en modelos fundacionales. Implementa soluciones de IA y machine learning que potencian los sistemas y herramientas.",
-    initials: "MA",
-    tags: ["Machine Learning", "APIs", "IA"],
-  },
-  {
-    name: "Diego Meynard",
-    role: "AI Engineer",
-    career: "Ingeniero Informático",
-    description: "Especialista en agentes autónomos. Crea ecosistemas digitales donde la IA opera flujos completos sin intervención manual.",
-    initials: "DM",
-    tags: ["Agentes", "n8n", "Automatización"],
-  },
-  {
-    name: "Benjamin Urrutia",
-    role: "Developer",
-    career: "Ingeniero Informático",
-    description: "Desarrollador de software enfocado en crear código robusto y mantenible, asegurando la máxima calidad técnica en entornos de producción.",
-    initials: "BU",
-    tags: ["Desarrollo", "Software", "Web"],
-  },
-  {
-    name: "Leandro Burgos",
-    role: "Developer",
-    career: "Ingeniero Informático",
-    description: "Programador de aplicaciones modernas. Construye interfaces y experiencias digitales fluidas, optimizando el rendimiento de principio a fin.",
-    initials: "LB",
-    tags: ["Web", "Frontend", "UI"],
+    image: "/team/gonzalo-yanez.jpeg",
   },
 ];
 
@@ -198,14 +131,14 @@ export default function CompanySection() {
           </p>
 
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-            <h1 className="co-h1 text-[13vw] font-semibold leading-[0.94] tracking-[-0.06em] text-white md:text-[7rem] xl:text-[8.5rem]">
+            <h1 className="co-h1 max-w-[10ch] text-[clamp(4.2rem,17vw,8.5rem)] font-semibold leading-[0.98] tracking-[-0.035em] text-white md:text-[7rem] xl:text-[8.5rem]">
               Somos
               <br />
-              <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text font-light italic text-transparent">Khido</span>
+              <span className="inline-block bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text pb-2 pr-3 font-light italic text-transparent">Khido</span>
             </h1>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pb-2 lg:grid-cols-1 lg:gap-5 lg:text-right">
+            <div className="grid grid-cols-3 gap-4 pb-2 sm:gap-8 lg:grid-cols-1 lg:gap-5 lg:text-right">
               {[
                 ["50+", "Proyectos Entregados"],
                 ["100%", "Clientes Satisfechos"],
@@ -275,16 +208,20 @@ export default function CompanySection() {
           </div>
 
           {/* Grilla compacta de equipo */}
-          <div className="team-grid grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
-            {team.map(({ name, role, career }, index) => (
+          <div className="team-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {team.map(({ name, role, career, image }, index) => (
               <article
                 key={name}
-                className="team-card-anim premium-float group relative overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-white/[0.026] px-4 py-8 text-center backdrop-blur-xl transition-[border-color,background,box-shadow] duration-500 hover:border-calipso-300/[0.24] hover:bg-white/[0.045] hover:shadow-[0_24px_80px_-64px_rgba(0,191,203,0.35)] flex flex-col justify-center items-center min-h-[140px]"
+                className="team-card-anim premium-float group relative flex min-h-[23rem] flex-col overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-white/[0.026] text-center backdrop-blur-xl transition-[border-color,background,box-shadow] duration-500 hover:border-calipso-300/[0.24] hover:bg-white/[0.045] hover:shadow-[0_24px_80px_-64px_rgba(0,191,203,0.35)]"
                 style={{ animationDelay: `${index * 0.05 + 0.1}s` }}
               >
                 <div className="card-dots absolute inset-0 opacity-20 pointer-events-none" />
 
-                <div className="relative z-10 flex w-full flex-col items-center">
+                <div className="relative z-10 aspect-square w-full overflow-hidden bg-white/[0.02]">
+                  <img src={image} alt={name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                </div>
+
+                <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-6">
                   <h3 className="text-base font-semibold tracking-[-0.02em] text-white leading-tight">
                     {name}
                   </h3>

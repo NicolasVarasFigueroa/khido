@@ -5,10 +5,10 @@
 :root {
   color-scheme: dark;
   --bg: #030712;
-  --surface: #071015;
+  --surface: #071117;
   --text: #ffffff;
-  --muted: rgba(255, 255, 255, 0.68);
-  --line: rgba(255, 255, 255, 0.08);
+  --muted: rgba(255, 255, 255, 0.72);
+  --line: rgba(255, 255, 255, 0.1);
   --calipso: #00BFCB;
 }
 
@@ -28,6 +28,10 @@ body {
 body {
   font-family: var(--font-geist-sans), Inter, system-ui, sans-serif;
   overflow-x: hidden;
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -37,6 +41,22 @@ a {
 
 button {
   font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid rgba(0, 224, 232, 0.85);
+  outline-offset: 4px;
 }
 
 ::selection {
@@ -75,33 +95,37 @@ button {
 
 .button-glow {
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-    0 0 16px rgba(0, 191, 203, 0.11),
-    0 14px 36px rgba(0, 0, 0, 0.28);
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 22px rgba(0, 191, 203, 0.16),
+    0 18px 44px rgba(0, 0, 0, 0.34);
   transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
 }
 
 .button-glow:hover {
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
-    0 0 22px rgba(0, 191, 203, 0.18),
-    0 18px 44px rgba(0, 0, 0, 0.32);
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 30px rgba(0, 191, 203, 0.24),
+    0 22px 54px rgba(0, 0, 0, 0.38);
   transform: translateY(-1px);
 }
 
+.button-glow:active {
+  transform: translateY(0);
+}
+
 .bento-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.032), rgba(255, 255, 255, 0.014)), rgba(5, 12, 18, 0.66);
-  border: 1px solid rgba(255, 255, 255, 0.075);
-  box-shadow: 0 22px 76px -58px rgba(0, 0, 0, 0.96);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.044), rgba(255, 255, 255, 0.016)), rgba(6, 14, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.088);
+  box-shadow: 0 24px 76px -58px rgba(0, 0, 0, 0.94);
   backdrop-filter: blur(18px);
   transition: border-color 0.45s ease, background 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
 }
 
 .bento-card:hover {
-  border-color: rgba(0, 191, 203, 0.18);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.042), rgba(255, 255, 255, 0.018)), rgba(7, 15, 22, 0.74);
+  border-color: rgba(0, 191, 203, 0.24);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.052), rgba(255, 255, 255, 0.02)), rgba(8, 17, 24, 0.8);
   transform: translateY(-2px);
-  box-shadow: 0 26px 82px -58px rgba(0, 0, 0, 0.96), 0 0 34px -26px rgba(0, 191, 203, 0.22);
+  box-shadow: 0 28px 84px -58px rgba(0, 0, 0, 0.96), 0 0 38px -26px rgba(0, 191, 203, 0.3);
 }
 
 .noise-bg {
@@ -158,10 +182,10 @@ button {
 
 .ambient-base {
   background:
-    radial-gradient(ellipse at 50% -12%, rgba(0, 191, 203, 0.105), transparent 38%),
-    radial-gradient(ellipse at 8% 22%, rgba(0, 191, 203, 0.055), transparent 34%),
-    radial-gradient(ellipse at 92% 50%, rgba(51, 167, 255, 0.055), transparent 36%),
-    linear-gradient(180deg, #030712 0%, #040913 46%, #030712 100%);
+    radial-gradient(ellipse at 50% -12%, rgba(0, 191, 203, 0.12), transparent 38%),
+    radial-gradient(ellipse at 8% 22%, rgba(0, 191, 203, 0.06), transparent 34%),
+    radial-gradient(ellipse at 92% 50%, rgba(112, 199, 255, 0.05), transparent 36%),
+    linear-gradient(180deg, #030712 0%, #050a13 46%, #030712 100%);
 }
 
 .ambient-grid {
@@ -244,14 +268,14 @@ button {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(0, 191, 203, 0.035), transparent 42%),
+    radial-gradient(ellipse at 50% 0%, rgba(0, 191, 203, 0.04), transparent 42%),
     linear-gradient(180deg, rgba(3, 7, 18, 0), rgba(3, 7, 18, 0.18) 50%, rgba(3, 7, 18, 0));
 }
 
 .premium-float {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 18px 72px -58px rgba(0, 0, 0, 0.96);
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 18px 70px -56px rgba(0, 0, 0, 0.94);
 }
 
 .reveal-soft {
