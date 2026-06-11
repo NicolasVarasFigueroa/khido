@@ -9,19 +9,19 @@ gsap.registerPlugin(ScrollTrigger);
 const team = [
   {
     name: "Nicolás Varas",
-    role: "CEO & Fundador",
+    role: "CEO",
     career: "Ingeniero Informático",
     image: "/team/nicolas-varas.jpeg",
   },
   {
     name: "Giancarlos Ricci",
-    role: "CTO & Fundador",
+    role: "CTO",
     career: "Ingeniero Civil Telemática",
     image: "/team/giancarlos-ricci.jpeg",
   },
   {
     name: "Jerson Lienlaf",
-    role: "CMO & Fundador",
+    role: "CMO",
     career: "Ingeniero Informático",
     image: "/team/jerson-lienlaf.jpeg",
   },
