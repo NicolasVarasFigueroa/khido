@@ -8,6 +8,11 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function isValidPhone(phone) {
+  const digits = phone.replace(/\D/g, "");
+  return digits.length >= 8 && digits.length <= 15;
+}
+
 async function parseResponse(response) {
   const text = await response.text();
 
@@ -32,6 +37,7 @@ export async function POST(request) {
     const body = await request.json();
     const name = normalizeValue(body.name);
     const email = normalizeValue(body.email).toLowerCase();
+    const phone = normalizeValue(body.phone);
     const service = normalizeValue(body.service);
     const message = normalizeValue(body.message);
     const honeypot = normalizeValue(body.website);
@@ -40,7 +46,7 @@ export async function POST(request) {
       return NextResponse.json({ ok: true });
     }
 
-    if (!name || !email || !service || !message) {
+    if (!name || !email || !phone || !service || !message) {
       return NextResponse.json(
         { ok: false, message: "Completa todos los campos del formulario." },
         { status: 400 }
@@ -54,6 +60,13 @@ export async function POST(request) {
       );
     }
 
+    if (!isValidPhone(phone)) {
+      return NextResponse.json(
+        { ok: false, message: "Ingresa un teléfono válido." },
+        { status: 400 }
+      );
+    }
+
     const response = await fetch(webAppUrl, {
       method: "POST",
       headers: {
@@ -62,6 +75,7 @@ export async function POST(request) {
       body: JSON.stringify({
         name,
         email,
+        phone,
         service,
         message,
         referer: request.headers.get("referer") || "",

@@ -7,6 +7,7 @@ import { ArrowRight, Mail } from "lucide-react";
 const initialForm = {
   name: "",
   email: "",
+  phone: "",
   service: "",
   message: "",
   website: ""
@@ -132,22 +133,42 @@ export default function ContactPageSection() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label htmlFor="service" className="text-sm text-white/50 font-medium pl-1">Servicio de interés</label>
-                <div className="relative">
-                  <select id="service" name="service" value={form.service} onChange={handleChange} required className="w-full appearance-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05] cursor-pointer">
-                    <option value="" disabled className="text-black">Selecciona un servicio...</option>
-                    <option value="Software a Medida" className="text-black">Software a Medida</option>
-                    <option value="Web Apps y E-commerce" className="text-black">Web, Apps y E-commerce</option>
-                    <option value="Data Engineering y ETL" className="text-black">Data Engineering y ETL</option>
-                    <option value="Power BI y Analítica" className="text-black">Power BI y Analítica</option>
-                    <option value="Integraciones y Automatización" className="text-black">Integraciones y Automatización</option>
-                    <option value="Cloud e Infraestructura" className="text-black">Cloud e Infraestructura</option>
-                    <option value="Inteligencia Artificial" className="text-black">Inteligencia Artificial Aplicada</option>
-                    <option value="Otro / No estoy seguro" className="text-black">Otro / No estoy seguro</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center text-white/30">
-                    ▼
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="phone" className="pl-1 text-sm font-medium text-white/50">Teléfono</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={form.phone}
+                    onChange={handleChange}
+                    required
+                    minLength={8}
+                    maxLength={20}
+                    inputMode="tel"
+                    autoComplete="tel"
+                    placeholder="Ej. +56 9 1234 5678"
+                    className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition-all placeholder:text-white/20 focus:border-calipso-400/50 focus:bg-white/[0.05]"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="service" className="pl-1 text-sm font-medium text-white/50">Servicio de interés</label>
+                  <div className="relative">
+                    <select id="service" name="service" value={form.service} onChange={handleChange} required className="w-full cursor-pointer appearance-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 pr-11 text-white outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05]">
+                      <option value="" disabled className="text-black">Selecciona un servicio...</option>
+                      <option value="Software a Medida" className="text-black">Software a Medida</option>
+                      <option value="Web Apps y E-commerce" className="text-black">Web, Apps y E-commerce</option>
+                      <option value="Data Engineering y ETL" className="text-black">Data Engineering y ETL</option>
+                      <option value="Power BI y Analítica" className="text-black">Power BI y Analítica</option>
+                      <option value="Integraciones y Automatización" className="text-black">Integraciones y Automatización</option>
+                      <option value="Cloud e Infraestructura" className="text-black">Cloud e Infraestructura</option>
+                      <option value="Inteligencia Artificial" className="text-black">Inteligencia Artificial Aplicada</option>
+                      <option value="Otro / No estoy seguro" className="text-black">Otro / No estoy seguro</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center text-white/30">
+                      ▼
+                    </div>
                   </div>
                 </div>
               </div>
