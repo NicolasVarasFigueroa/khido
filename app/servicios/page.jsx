@@ -6,7 +6,7 @@ import LandingAtmosphere from "@/components/effects/LandingAtmosphere";
 
 export const metadata = {
   title: "Servicios | KHIDO",
-  description: "Descubre cómo construimos la infraestructura que tu empresa necesita para operar más rápido y multiplicar su rentabilidad.",
+  description: "Software a medida, web y apps, data engineering, ETL, Power BI, integraciones, cloud, automatización e IA en un solo equipo.",
 };
 
 export default function ServiciosPage() {

@@ -44,7 +44,7 @@ export default function SectorWorkflowSection({ slug }) {
             Cómo operará tu empresa <span className={`${sector.color} drop-shadow-md`}>con nosotros.</span>
           </h2>
           <p className="text-white/50 max-w-2xl mx-auto">
-            Un ejemplo real del flujo de trabajo automatizado y conectado que construiremos para tu negocio.
+            Un ejemplo real de cómo conectamos producto, sistemas, datos y operación para resolver el desafío completo.
           </p>
         </div>
 

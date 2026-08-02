@@ -1,10 +1,22 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import { 
-  MessageCircle, Calendar, Mail, Database, Instagram, 
-  ShoppingCart, FileText, CheckCircle, Phone, Headphones, 
-  Globe, BarChart, Mic, ClipboardList, Zap, MessageSquare 
+import {
+  BarChart3,
+  Bot,
+  CheckCircle,
+  Cloud,
+  Code2,
+  Database,
+  FileText,
+  Globe,
+  LayoutDashboard,
+  Network,
+  Server,
+  ShoppingCart,
+  Smartphone,
+  Workflow,
+  Zap,
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,89 +26,88 @@ gsap.registerPlugin(ScrollTrigger);
 const scenarios = [
   {
     id: 0,
-    leftIcon: MessageCircle,
-    leftLabel: "WhatsApp",
-    leftColor: "text-[#25D366]",
-    rightIcon: Calendar,
-    rightLabel: "Reserva Lista",
-    rightColor: "text-[#00E676]",
-    text: "Agendamiento automático. Cero errores humanos.",
+    leftIcon: FileText,
+    leftLabel: "Necesidad",
+    leftColor: "text-white/80",
+    rightIcon: Code2,
+    rightLabel: "Software a Medida",
+    rightColor: "text-calipso-300",
+    text: "Sistemas propios diseñados alrededor de tu operación y tus objetivos.",
   },
   {
     id: 1,
-    leftIcon: Mail,
-    leftLabel: "Correo",
-    leftColor: "text-white/90",
-    rightIcon: Database,
-    rightLabel: "CRM Sincronizado",
-    rightColor: "text-calipso-400",
-    text: "Sincronización instantánea de leads y datos vitales.",
+    leftIcon: Globe,
+    leftLabel: "Experiencia Digital",
+    leftColor: "text-cyan-300",
+    rightIcon: ShoppingCart,
+    rightLabel: "Web & E-commerce",
+    rightColor: "text-emerald-300",
+    text: "Sitios, portales y comercios digitales rápidos, claros y listos para vender.",
   },
   {
     id: 2,
-    leftIcon: Instagram,
-    leftLabel: "Instagram",
-    leftColor: "text-[#E1306C]",
-    rightIcon: ShoppingCart,
-    rightLabel: "Venta Cerrada",
-    rightColor: "text-[#00E676]",
-    text: "De la consulta inicial al pago sin intervención.",
+    leftIcon: Database,
+    leftLabel: "Fuentes de Datos",
+    leftColor: "text-blue-300",
+    rightIcon: Workflow,
+    rightLabel: "ETL Confiable",
+    rightColor: "text-calipso-300",
+    text: "Pipelines que ordenan, validan y centralizan la información del negocio.",
   },
   {
     id: 3,
-    leftIcon: FileText,
-    leftLabel: "Documentos",
-    leftColor: "text-white/80",
-    rightIcon: CheckCircle,
-    rightLabel: "Validación",
-    rightColor: "text-calipso-400",
-    text: "Procesamiento y validación de archivos en segundos.",
+    leftIcon: BarChart3,
+    leftLabel: "Datos Operativos",
+    leftColor: "text-amber-200",
+    rightIcon: LayoutDashboard,
+    rightLabel: "Power BI",
+    rightColor: "text-calipso-300",
+    text: "Dashboards ejecutivos con indicadores confiables y actualizados.",
   },
   {
     id: 4,
-    leftIcon: Phone,
-    leftLabel: "Llamadas",
-    leftColor: "text-blue-400",
-    rightIcon: Headphones,
-    rightLabel: "Soporte IA",
-    rightColor: "text-indigo-400",
-    text: "Agentes de voz 24/7 que resuelven dudas al instante.",
+    leftIcon: Smartphone,
+    leftLabel: "Idea de Producto",
+    leftColor: "text-indigo-300",
+    rightIcon: CheckCircle,
+    rightLabel: "App en Producción",
+    rightColor: "text-emerald-300",
+    text: "Diseño, desarrollo y despliegue de aplicaciones web y móviles.",
   },
   {
     id: 5,
-    leftIcon: MessageSquare,
-    leftLabel: "Consultas",
-    leftColor: "text-calipso-300",
+    leftIcon: Network,
+    leftLabel: "Sistemas Aislados",
+    leftColor: "text-white/70",
     rightIcon: Zap,
-    rightLabel: "Solución Rápida",
+    rightLabel: "Integración API",
     rightColor: "text-cyan-200",
-    text: "Atención hiper-personalizada a la velocidad de la luz.",
+    text: "Conectamos plataformas, procesos y equipos para que la información fluya.",
   },
   {
     id: 6,
-    leftIcon: Globe,
-    leftLabel: "Web Leads",
-    leftColor: "text-cyan-400",
-    rightIcon: BarChart,
-    rightLabel: "Analytics",
-    rightColor: "text-calipso-500",
-    text: "Captura de prospectos y análisis de conversión automático.",
+    leftIcon: Server,
+    leftLabel: "Infraestructura",
+    leftColor: "text-white/75",
+    rightIcon: Cloud,
+    rightLabel: "Cloud Escalable",
+    rightColor: "text-sky-300",
+    text: "Arquitecturas seguras, observables y preparadas para crecer.",
   },
   {
     id: 7,
-    leftIcon: Mic,
-    leftLabel: "Reuniones",
-    leftColor: "text-calipso-200",
-    rightIcon: ClipboardList,
-    rightLabel: "Tareas Listas",
-    rightColor: "text-cyan-300",
-    text: "Transcripción y extracción de compromisos post-llamada.",
+    leftIcon: Bot,
+    leftLabel: "Procesos & Datos",
+    leftColor: "text-violet-300",
+    rightIcon: Zap,
+    rightLabel: "IA Aplicada",
+    rightColor: "text-calipso-300",
+    text: "Implementamos IA donde aporta valor medible, integrada a sistemas reales.",
   },
 ];
 
 export default function SolutionsCarouselSection() {
   const [activeIdx, setActiveIdx] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -141,11 +152,11 @@ export default function SolutionsCarouselSection() {
       <div className="relative z-10 mx-auto max-w-6xl text-center">
         <div className="solutions-header mb-16 md:mb-24">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-calipso-300/[0.82]">
-            INTEGRACIÓN TOTAL
+            TECNOLOGÍA DE PUNTA A PUNTA
           </p>
           <h2 className="text-4xl font-light leading-[1.1] tracking-tight text-white md:text-5xl lg:text-[3.45rem]">
-            Tú te enfocas en liderar, <br className="hidden md:block" />
-            <span className="font-semibold text-calipso-300 drop-shadow-[0_0_18px_rgba(0,191,203,0.18)]">KHIDO</span> opera el día a día.
+            Desde la idea hasta producción, <br className="hidden md:block" />
+            <span className="font-semibold text-calipso-300 drop-shadow-[0_0_18px_rgba(0,191,203,0.18)]">KHIDO</span> construye la solución completa.
           </h2>
         </div>
 

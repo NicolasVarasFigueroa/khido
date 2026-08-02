@@ -23,8 +23,8 @@ export default function TerminosPage() {
           </h1>
           <div className="bento-card rounded-lg p-6 md:p-8">
             <p className="text-base leading-8 text-white/[0.64] md:text-lg">
-              Estos términos describen las condiciones generales bajo las que KHIDO presta servicios de desarrollo web,
-              automatización, inteligencia artificial y business intelligence. Para detalles contractuales específicos,
+              Estos términos describen las condiciones generales bajo las que KHIDO presta servicios de software,
+              productos digitales, datos, Power BI, integraciones, cloud, automatización e inteligencia artificial. Para detalles contractuales específicos,
               escríbenos a contacto@khido.cl.
             </p>
           </div>

@@ -5,7 +5,7 @@ import LandingAtmosphere from "@/components/effects/LandingAtmosphere";
 
 export const metadata = {
   title: "Compañía — Khido",
-  description: "Conoce al equipo detrás de Khido: expertos en IA, automatización, Business Intelligence y desarrollo web para transformar tu negocio.",
+  description: "Conoce al equipo de KHIDO: estrategia, diseño, software, productos digitales, datos, Power BI, cloud, automatización e IA.",
 };
 
 export default function CompanyPage() {

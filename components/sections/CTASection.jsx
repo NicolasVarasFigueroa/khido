@@ -48,7 +48,7 @@ export default function CTASection() {
         <div className="cta-ribbon absolute -left-[8%] top-0 h-28 w-[78%] rotate-[-14deg] bg-calipso-500/[0.08] blur-3xl" />
         <div className="relative z-10 max-w-3xl">
           <h2 className="text-4xl font-light leading-[1.08] tracking-tight text-white md:text-5xl lg:text-6xl">
-            No vendemos herramientas.
+            No vendemos tecnología aislada.
             <br />
             <span className="font-semibold text-white">Construimos soluciones completas.</span>
           </h2>

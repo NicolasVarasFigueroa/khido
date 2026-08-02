@@ -156,13 +156,13 @@ export default function CompanySection() {
 
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
             <p className="co-p1 text-lg leading-8 text-white/72">
-              Khido nació con una misión clara: democratizar el acceso a la inteligencia artificial y la
-              automatización para empresas de todos los tamaños. Somos un equipo apasionado por la tecnología,
-              convencidos de que los datos bien aprovechados son la mayor ventaja competitiva del siglo XXI.
+              Khido nació para resolver desafíos de negocio con tecnología bien construida. Somos un equipo
+              multidisciplinario que convierte ideas, procesos y datos en productos digitales, sistemas e
+              infraestructura capaces de mejorar la operación y abrir nuevas oportunidades.
             </p>
             <p className="co-p2 text-lg leading-8 text-white/72">
-              Combinamos expertise en IA, Business Intelligence, desarrollo web y automatización de procesos
-              para entregar soluciones integrales que generan resultados medibles desde el primer día.
+              Combinamos estrategia, diseño, desarrollo de software, web y apps, data engineering, Power BI,
+              integraciones, cloud, automatización e IA para entregar soluciones completas de principio a fin.
             </p>
           </div>
         </div>
@@ -186,8 +186,8 @@ export default function CompanySection() {
         </div>
       </div>
 
-      {/* ── TEAM GRID (2 rows × 3 cols) ─────────────────────────── */}
-      <div className="relative z-10 px-5 py-28 md:px-8 md:py-36">
+      {/* ── TEAM GRID ───────────────────────────────────────────── */}
+      <div className="relative z-10 px-5 pb-24 pt-28 md:px-8 md:pb-28 md:pt-36">
         <div className="mx-auto max-w-[96rem]">
 
           {/* Heading */}
@@ -208,29 +208,33 @@ export default function CompanySection() {
           </div>
 
           {/* Grilla compacta de equipo */}
-          <div className="team-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="team-grid mx-auto grid max-w-[82rem] grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-5">
             {team.map(({ name, role, career, image }, index) => (
               <article
                 key={name}
-                className="team-card-anim premium-float group relative flex min-h-[23rem] flex-col overflow-hidden rounded-[1.2rem] border border-white/[0.08] bg-white/[0.026] text-center backdrop-blur-xl transition-[border-color,background,box-shadow] duration-500 hover:border-calipso-300/[0.24] hover:bg-white/[0.045] hover:shadow-[0_24px_80px_-64px_rgba(0,191,203,0.35)]"
+                className="team-card-anim group relative flex min-h-[14.5rem] flex-col items-center overflow-hidden rounded-lg border border-white/[0.075] bg-white/[0.018] px-3 py-6 text-center backdrop-blur-xl transition-[border-color,background,transform] duration-500 hover:-translate-y-0.5 hover:border-calipso-300/[0.2] hover:bg-white/[0.03] sm:min-h-[16rem] sm:px-5 sm:py-7"
                 style={{ animationDelay: `${index * 0.05 + 0.1}s` }}
               >
-                <div className="card-dots absolute inset-0 opacity-20 pointer-events-none" />
+                <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.16] to-transparent" />
 
-                <div className="relative z-10 aspect-square w-full overflow-hidden bg-white/[0.02]">
-                  <img src={image} alt={name} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <div className="relative z-10 h-20 w-20 shrink-0 overflow-hidden rounded-full border border-white/[0.12] bg-white/[0.025] p-0.5 shadow-[0_14px_40px_-28px_rgba(0,0,0,0.9)] sm:h-24 sm:w-24">
+                  <img
+                    src={image}
+                    alt={name}
+                    className="h-full w-full rounded-full object-cover saturate-[0.82] transition-[filter,transform] duration-500 group-hover:scale-[1.025] group-hover:saturate-100"
+                  />
                 </div>
 
-                <div className="relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 py-6">
-                  <h3 className="text-base font-semibold tracking-[-0.02em] text-white leading-tight">
+                <div className="relative z-10 flex w-full flex-1 flex-col items-center pt-5 sm:pt-6">
+                  <h3 className="text-sm font-semibold leading-tight text-white sm:text-base">
                     {name}
                   </h3>
                   
-                  <p className="mt-2.5 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-calipso-300/80 leading-snug">
+                  <p className="mt-2 text-[0.62rem] font-bold uppercase leading-snug tracking-[0.18em] text-calipso-300/75">
                     {role}
                   </p>
                   
-                  <p className="mt-3 text-xs font-medium text-white/40 leading-snug">
+                  <p className="mt-3 max-w-[11rem] text-[0.7rem] font-medium leading-5 text-white/40 sm:text-xs">
                     {career}
                   </p>
                 </div>

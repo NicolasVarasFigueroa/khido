@@ -59,13 +59,13 @@ export default function IndustrySectorsSection() {
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="sector-header mb-16 text-center md:mb-20">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-calipso-300/[0.82]">
-            SOLUCIONES INTEGRALES POR INDUSTRIA
+            TECNOLOGÍA APLICADA POR INDUSTRIA
           </p>
           <h2 className="mb-5 text-4xl font-semibold leading-[1.12] tracking-tight text-white md:text-5xl lg:text-[3.25rem]">
             Entendemos los desafíos <span className="text-calipso-300 drop-shadow-[0_0_18px_rgba(0,191,203,0.16)]">de tu sector</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-7 text-white/[0.58] md:text-base">
-            Toca una <span className="font-medium text-white/80">tarjeta</span> para descubrir cómo transformamos tu empresa.
+            Explora cómo combinamos software, datos, integraciones, automatización e IA según las necesidades de cada industria.
           </p>
         </div>
 

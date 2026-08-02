@@ -11,8 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     num: "01",
-    title: "Auditoría & Análisis",
-    description: "Mapeamos tus procesos actuales e identificamos los cuellos de botella exactos donde pierdes tiempo y dinero.",
+    title: "Descubrimiento & Estrategia",
+    description: "Entendemos el negocio, los usuarios y el desafío técnico para definir una solución con objetivos y alcance claros.",
     icon: Search,
     graphic: (
       <div className="absolute right-4 top-4 opacity-20 flex gap-2">
@@ -24,7 +24,7 @@ const steps = [
   {
     num: "02",
     title: "Arquitectura de Solución",
-    description: "Diseñamos la estructura tecnológica: bases de datos, integraciones de API y modelos de IA.",
+    description: "Definimos la arquitectura, experiencia, datos, integraciones, seguridad e infraestructura que sostendrán el proyecto.",
     icon: PenTool,
     graphic: (
       <div className="absolute -right-4 -bottom-4 opacity-10">
@@ -35,8 +35,8 @@ const steps = [
   },
   {
     num: "03",
-    title: "Desarrollo & Deploy",
-    description: "Construimos tu infraestructura. Código limpio, automatizaciones robustas y pruebas de estrés.",
+    title: "Desarrollo & Integración",
+    description: "Construimos, conectamos y desplegamos la solución con código mantenible, pruebas y entregas iterativas.",
     icon: Code2,
     graphic: (
       <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 flex flex-col gap-2 p-4">
@@ -49,8 +49,8 @@ const steps = [
   },
   {
     num: "04",
-    title: "Escalabilidad Continua",
-    description: "Monitoreamos el rendimiento, aplicamos analítica de datos y escalamos los servidores según demanda.",
+    title: "Evolución & Soporte",
+    description: "Monitoreamos, mantenemos y mejoramos la solución para acompañar nuevas necesidades, usuarios y volúmenes.",
     icon: Rocket,
     graphic: (
       <div className="absolute right-8 bottom-8 opacity-20">
@@ -107,7 +107,7 @@ export default function ProcessSection() {
             Cómo lo <span className="text-transparent bg-clip-text bg-gradient-to-r from-calipso-300 to-white/70">hacemos.</span>
           </h2>
           <p className="text-base leading-8 text-white/[0.6] md:text-lg">
-            Un proceso iterativo diseñado para desplegar sistemas corporativos rápidos, seguros y escalables.
+            Un proceso completo para convertir una necesidad de negocio en tecnología confiable, útil y preparada para crecer.
           </p>
         </div>
 

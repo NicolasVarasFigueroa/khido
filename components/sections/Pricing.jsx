@@ -5,12 +5,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   BadgeCheck,
-  Bot,
   BrainCircuit,
   Check,
   CircleDot,
   LayoutDashboard,
-  MessageCircle,
   MonitorCog,
   Network,
   PanelsTopLeft,
@@ -22,79 +20,79 @@ import {
 
 const planGroups = {
   ia: {
-    label: "Planes IA",
-    eyebrow: "Funciones base",
-    capabilityTitle: "IA y automatización",
+    label: "Datos & Operación",
+    eyebrow: "Capacidades incluidas",
+    capabilityTitle: "Datos y procesos",
     plans: [
       {
-        name: "Agente Inteligente",
+        name: "Power BI & Analytics",
         tags: [
           { label: "Avanzado", tone: "blue" },
           { label: "Popular", tone: "gold" }
         ],
-        icon: Bot,
+        icon: LayoutDashboard,
         features: [
-          { icon: BrainCircuit, text: "Atiende a tus clientes todos los días, las 24 horas" },
-          { icon: MessageCircle, text: "Responde dudas, agenda citas o toma pedidos" },
-          { icon: Smartphone, text: "Funciona en WhatsApp, Instagram y Facebook" },
-          { icon: Network, text: "Se conecta a tus sistemas para no perder datos" }
+          { icon: LayoutDashboard, text: "Centraliza indicadores clave del negocio" },
+          { icon: Network, text: "Conecta ERP, CRM, planillas y otras fuentes" },
+          { icon: CircleDot, text: "Modela métricas y reglas de negocio confiables" },
+          { icon: BadgeCheck, text: "Entrega dashboards ejecutivos y operativos" }
         ],
         implementation: {
-          title: "Instalación y mantención",
-          text: "A cargo de ingeniero experto"
+          title: "Implementación de analítica",
+          text: "Levantamiento, modelado, diseño y publicación"
         },
         capabilities: [
-          { title: "Inteligencia artificial", text: "Aprende de tu negocio" },
-          { title: "Omnicanal", text: "Unifica tus canales" },
-          { title: "Seguimiento", text: "Ordena cada solicitud" },
+          { title: "Power BI", text: "Visualización clara" },
+          { title: "KPIs", text: "Métricas correctas" },
+          { title: "Fuentes", text: "Datos conectados" },
           { title: "Soporte", text: "Mejoras continuas" }
         ],
         cta: "Solicitar presupuesto"
       },
       {
-        name: "Sistema Automatizado",
+        name: "Data Platform & ETL",
         tags: [
           { label: "Recomendado", tone: "blue" }
         ],
-        icon: Workflow,
+        icon: Network,
         features: [
-          { icon: Check, text: "Reduce tareas manuales del equipo" },
-          { icon: Settings2, text: "Organiza pasos, aprobaciones y avisos" },
-          { icon: LayoutDashboard, text: "Centraliza solicitudes y seguimiento" },
-          { icon: Network, text: "Conecta áreas para trabajar con más orden" }
+          { icon: Network, text: "Integra datos desde múltiples sistemas" },
+          { icon: Settings2, text: "Limpia, valida y transforma información" },
+          { icon: CircleDot, text: "Centraliza datos listos para consumo" },
+          { icon: BadgeCheck, text: "Monitorea calidad y ejecución de pipelines" }
         ],
         implementation: {
-          title: "Implementación por etapas",
-          text: "Revisión, configuración y soporte"
+          title: "Arquitectura por etapas",
+          text: "Fuentes, pipelines, almacenamiento y monitoreo"
         },
         capabilities: [
-          { title: "Automatización", text: "Menos trabajo repetido" },
+          { title: "ETL / ELT", text: "Flujos robustos" },
           { title: "Integración", text: "Con tus sistemas" },
-          { title: "Control", text: "Procesos claros" },
+          { title: "Calidad", text: "Datos confiables" },
           { title: "Escala", text: "Preparado para crecer" }
         ],
         cta: "Agendar reunión"
       },
       {
-        name: "Operación Inteligente",
+        name: "Integración & Automatización",
         tags: [
           { label: "Avanzado", tone: "blue" }
         ],
-        icon: Network,
+        icon: Workflow,
         features: [
-          { icon: Check, text: "Conecta atención, ventas y operación" },
-          { icon: CircleDot, text: "Prioriza solicitudes importantes" },
-          { icon: LayoutDashboard, text: "Unifica información del negocio" },
-          { icon: BadgeCheck, text: "Acompaña procesos de mayor volumen" }
+          { icon: Network, text: "Conecta plataformas mediante APIs y webhooks" },
+          { icon: Check, text: "Reduce tareas manuales y errores operativos" },
+          { icon: Settings2, text: "Orquesta reglas, aprobaciones y alertas" },
+          { icon: BrainCircuit, text: "Incorpora IA cuando genera valor real" }
         ],
         implementation: {
-          title: "Solución completa",
-          text: "Diseño, puesta en marcha y mejoras"
+          title: "Integración completa",
+          text: "Diseño, desarrollo, puesta en marcha y mejoras"
         },
         capabilities: [
-          { title: "IA aplicada", text: "Para operar mejor" },
-          { title: "Canales", text: "Todo conectado" },
-          { title: "Equipo", text: "Trabajo coordinado" },
+          { title: "APIs", text: "Sistemas conectados" },
+          { title: "Workflows", text: "Procesos fluidos" },
+          { title: "IA aplicada", text: "Donde aporta valor" },
           { title: "Soporte", text: "Ajustes continuos" }
         ],
         cta: "Cotizar solución"
@@ -102,80 +100,80 @@ const planGroups = {
     ]
   },
   tech: {
-    label: "Otras Tecnologías",
-    eyebrow: "Soluciones digitales",
-    capabilityTitle: "Sistemas y operación",
+    label: "Desarrollo & Cloud",
+    eyebrow: "Capacidades incluidas",
+    capabilityTitle: "Producto y tecnología",
     plans: [
       {
-        name: "Web Profesional",
+        name: "Web & E-commerce",
         tags: [
           { label: "Inicial", tone: "blue" }
         ],
         icon: PanelsTopLeft,
         features: [
-          { icon: Check, text: "Presenta tu empresa con una imagen profesional" },
-          { icon: MessageCircle, text: "Convierte visitas en contactos reales" },
-          { icon: Smartphone, text: "Se ve bien en computador y celular" },
-          { icon: Network, text: "Conecta formularios, WhatsApp y seguimiento" }
+          { icon: Check, text: "Diseño alineado a tu marca y objetivos" },
+          { icon: PanelsTopLeft, text: "Experiencia rápida, clara y responsive" },
+          { icon: Smartphone, text: "Optimizado para computador y celular" },
+          { icon: Network, text: "Integrado con pagos, CRM, inventario o analítica" }
         ],
         implementation: {
-          title: "Diseño e instalación",
-          text: "Sitio listo para captar clientes"
+          title: "Diseño y desarrollo",
+          text: "Producto listo para publicar, medir y evolucionar"
         },
         capabilities: [
           { title: "Diseño", text: "A medida de tu marca" },
-          { title: "Contacto", text: "Botones y formularios" },
-          { title: "Contenido", text: "Ordenado y claro" },
-          { title: "Soporte", text: "Ajustes iniciales" }
+          { title: "Integración", text: "Pagos y sistemas" },
+          { title: "Rendimiento", text: "Carga rápida" },
+          { title: "Soporte", text: "Evolución continua" }
         ],
         cta: "Solicitar presupuesto"
       },
       {
-        name: "Sistema de Gestión",
+        name: "Software a Medida",
         tags: [
           { label: "Recomendado", tone: "blue" },
           { label: "Popular", tone: "gold" }
         ],
         icon: MonitorCog,
         features: [
-          { icon: Check, text: "Ordena clientes, tareas y solicitudes" },
-          { icon: LayoutDashboard, text: "Deja la información importante en un solo lugar" },
-          { icon: Settings2, text: "Define flujos de trabajo para tu equipo" },
-          { icon: BadgeCheck, text: "Ayuda a tomar decisiones con más claridad" }
+          { icon: Check, text: "Resuelve procesos específicos de tu negocio" },
+          { icon: LayoutDashboard, text: "Centraliza operación, usuarios e información" },
+          { icon: Settings2, text: "Define roles, reglas y flujos propios" },
+          { icon: BadgeCheck, text: "Crece sobre una base mantenible y segura" }
         ],
         implementation: {
-          title: "Configuración guiada",
-          text: "Adaptado a tus procesos internos"
+          title: "Proyecto de punta a punta",
+          text: "Descubrimiento, UX, desarrollo y despliegue"
         },
         capabilities: [
-          { title: "Gestión", text: "Todo más ordenado" },
-          { title: "Equipo", text: "Roles y seguimiento" },
-          { title: "Datos", text: "Información clara" },
+          { title: "Producto", text: "Hecho a medida" },
+          { title: "Equipo", text: "Roles y permisos" },
+          { title: "Datos", text: "Modelo propio" },
           { title: "Soporte", text: "Mejoras continuas" }
         ],
         cta: "Agendar reunión"
       },
       {
-        name: "Plataforma a Medida",
+        name: "Apps, Cloud & Escala",
         tags: [
           { label: "Avanzado", tone: "blue" }
         ],
         icon: LayoutDashboard,
         features: [
-          { icon: Check, text: "Construye una solución propia para tu operación" },
-          { icon: Network, text: "Integra áreas, clientes y procesos clave" },
-          { icon: Settings2, text: "Automatiza pasos importantes del negocio" },
-          { icon: Sparkles, text: "Escala sin depender de soluciones genéricas" }
+          { icon: Smartphone, text: "Desarrolla aplicaciones web, PWA o móviles" },
+          { icon: Network, text: "Integra servicios, datos y procesos clave" },
+          { icon: Settings2, text: "Despliega con seguridad y observabilidad" },
+          { icon: Sparkles, text: "Escala infraestructura y producto con demanda real" }
         ],
         implementation: {
-          title: "Proyecto completo",
-          text: "Diagnóstico, desarrollo y soporte"
+          title: "Producto e infraestructura",
+          text: "Arquitectura, desarrollo, cloud y soporte"
         },
         capabilities: [
-          { title: "Sistema", text: "Hecho a medida" },
-          { title: "Integración", text: "Con tus herramientas" },
+          { title: "Apps", text: "Web y móvil" },
+          { title: "Cloud", text: "Infraestructura segura" },
           { title: "Escala", text: "Preparado para crecer" },
-          { title: "Soporte", text: "Acompañamiento" }
+          { title: "DevOps", text: "Entrega y monitoreo" }
         ],
         cta: "Cotizar solución"
       }
@@ -304,7 +302,7 @@ function PlanCard({ plan, group }) {
 }
 
 export default function PricingSection() {
-  const [activeGroup, setActiveGroup] = useState("ia");
+  const [activeGroup, setActiveGroup] = useState("tech");
   const group = planGroups[activeGroup];
 
   return (
@@ -319,10 +317,10 @@ export default function PricingSection() {
       <div className="relative z-10 mx-auto max-w-[78rem]">
         <div className="text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-calipso-300/85">
-            Nuestros planes
+            TIPOS DE SOLUCIÓN
           </p>
           <h1 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl">
-            Diseñados para <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(0,191,203,0.16)]">escalar</span>
+            Diseñados a la <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text text-transparent drop-shadow-[0_0_18px_rgba(0,191,203,0.16)]">medida de tu desafío</span>
           </h1>
         </div>
 

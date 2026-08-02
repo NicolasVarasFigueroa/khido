@@ -5,7 +5,7 @@ import LandingAtmosphere from "@/components/effects/LandingAtmosphere";
 
 export const metadata = {
   title: "Contacto | KHIDO",
-  description: "Hablemos de tu negocio. Estamos listos para construir la infraestructura que necesitas.",
+  description: "Hablemos de tu desafío tecnológico y construyamos la solución adecuada para tu negocio.",
 };
 
 export default function ContactoPage() {

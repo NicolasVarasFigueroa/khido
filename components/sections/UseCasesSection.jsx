@@ -3,30 +3,30 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Zap, TrendingUp, PieChart, Laptop } from "lucide-react";
+import { Code2, Layers3, Network, PieChart } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const benefits = [
   {
-    title: "Cero Tareas Manuales",
-    description: "Elimina el trabajo repetitivo de tu equipo. Automatizamos la carga de datos, correos y sincronización entre sistemas.",
-    icon: Zap,
+    title: "Tecnología que Encaja",
+    description: "Construimos alrededor de tus procesos, usuarios y objetivos, sin obligarte a adaptar el negocio a una herramienta genérica.",
+    icon: Code2,
   },
   {
-    title: "Aumento de Ventas",
-    description: "Implementamos agentes inteligentes que califican leads 24/7 y recuperan carritos abandonados automáticamente.",
-    icon: TrendingUp,
+    title: "Operación Conectada",
+    description: "Integramos plataformas, datos y flujos para eliminar silos, reprocesos y puntos ciegos entre áreas.",
+    icon: Network,
   },
   {
-    title: "Decisiones Basadas en Data",
-    description: "Conectamos todas tus fuentes de información a dashboards en tiempo real para que dejes de adivinar.",
+    title: "Datos para Decidir",
+    description: "Centralizamos información con ETL y la convertimos en indicadores claros mediante Power BI y analítica a medida.",
     icon: PieChart,
   },
   {
-    title: "Sistemas Propios",
-    description: "Desarrollamos la infraestructura web que necesitas (LMS, Portales B2B, E-commerce) para dejar de pagar software externo.",
-    icon: Laptop,
+    title: "Un Equipo Integral",
+    description: "Estrategia, UX, desarrollo, datos, infraestructura e IA trabajando juntos desde el diagnóstico hasta el soporte.",
+    icon: Layers3,
   },
 ];
 
@@ -79,14 +79,14 @@ export default function UseCasesSection() {
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="use-header mb-14 max-w-3xl md:mb-20">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.26em] text-calipso-300/[0.82]">
-            Beneficios Directos
+            IMPACTO TECNOLÓGICO
           </p>
           <h2 className="mb-5 text-4xl font-semibold leading-[1.12] tracking-tight text-white md:text-5xl">
-            El impacto de operar <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-calipso-300 to-white/70">con inteligencia.</span>
+            Tecnología que resuelve, <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-calipso-300 to-white/70">conecta y escala.</span>
           </h2>
           <p className="max-w-2xl text-base leading-8 text-white/[0.6] md:text-lg">
-            Sistemas diseñados no solo para verse bien, sino para afectar directamente la última línea de tu estado de resultados.
+            Cada solución se diseña para mejorar una operación real, habilitar nuevas capacidades y generar resultados medibles.
           </p>
         </div>
 

@@ -87,7 +87,7 @@ export default function ContactPageSection() {
             Hablemos de tu <br className="hidden md:block"/> <span className="font-semibold italic">negocio.</span>
           </h1>
           <p className="text-white/70 text-lg mb-12 max-w-md leading-relaxed">
-            Ya sea que necesites automatizar procesos, integrar IA o desarrollar una plataforma a medida, estamos listos para construir la infraestructura que necesitas.
+            Desde una web o aplicación hasta software a medida, ETL, Power BI, integraciones, cloud o IA: cuéntanos el desafío y diseñaremos la solución correcta.
           </p>
 
           <div className="flex flex-col gap-5">
@@ -137,11 +137,13 @@ export default function ContactPageSection() {
                 <div className="relative">
                   <select id="service" name="service" value={form.service} onChange={handleChange} required className="w-full appearance-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05] cursor-pointer">
                     <option value="" disabled className="text-black">Selecciona un servicio...</option>
-                    <option value="Automatización Inteligente" className="text-black">Automatización Inteligente</option>
-                    <option value="bi" className="text-black">Business Intelligence</option>
-                    <option value="data" className="text-black">Data & Machine Learning</option>
-                    <option value="Inteligencia Artificial" className="text-black">Inteligencia Artificial</option>
-                    <option value="Desarrollo Web y Plataformas" className="text-black">Desarrollo Web y Plataformas</option>
+                    <option value="Software a Medida" className="text-black">Software a Medida</option>
+                    <option value="Web Apps y E-commerce" className="text-black">Web, Apps y E-commerce</option>
+                    <option value="Data Engineering y ETL" className="text-black">Data Engineering y ETL</option>
+                    <option value="Power BI y Analítica" className="text-black">Power BI y Analítica</option>
+                    <option value="Integraciones y Automatización" className="text-black">Integraciones y Automatización</option>
+                    <option value="Cloud e Infraestructura" className="text-black">Cloud e Infraestructura</option>
+                    <option value="Inteligencia Artificial" className="text-black">Inteligencia Artificial Aplicada</option>
                     <option value="Otro / No estoy seguro" className="text-black">Otro / No estoy seguro</option>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center text-white/30">

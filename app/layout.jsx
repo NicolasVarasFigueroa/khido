@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "KHIDO",
-  description: "KHIDO - Plataforma Inteligente"
+  title: "KHIDO | Soluciones Tecnológicas",
+  description: "Software a medida, web y apps, data engineering, ETL, Power BI, integraciones, cloud, automatización e inteligencia artificial."
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="grain">
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ParticleMorphScene from "@/components/three/ParticleMorphScene";
@@ -58,9 +58,9 @@ export default function DetailedServicesSection() {
       
       {/* Title */}
       <div className="relative z-10 px-5 mb-24 md:mb-32 services-hero-title max-w-[96rem] mx-auto text-center md:text-left">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-calipso-300">Nuestras Soluciones</p>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-calipso-300">CAPACIDADES TECNOLÓGICAS</p>
         <h1 className="text-4xl md:text-6xl font-light leading-[1.1] tracking-[-0.04em] text-white">
-          Sistemas construidos <br className="hidden md:block" /> para <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text font-semibold italic text-transparent">escalar.</span>
+          Todo lo que necesitas <br className="hidden md:block" /> para <span className="bg-gradient-to-r from-calipso-300/95 via-white to-white/70 bg-clip-text font-semibold italic text-transparent">construir y crecer.</span>
         </h1>
       </div>
 
