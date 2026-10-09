@@ -1,204 +1,86 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ArrowRight, Mail } from "lucide-react";
-
-const initialForm = {
-  name: "",
-  email: "",
-  phone: "",
-  service: "",
-  message: "",
-  website: ""
-};
+import { ArrowUpRight, Mail } from "lucide-react";
 
 export default function ContactPageSection() {
   const containerRef = useRef(null);
-  const [form, setForm] = useState(initialForm);
-  const [status, setStatus] = useState("idle");
-  const [feedback, setFeedback] = useState("");
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Fade in title and left side
-      gsap.fromTo(".contact-left > *", 
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }
-      );
-
-      // Fade in form on right side
-      gsap.fromTo(".contact-form", 
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.3 }
+      gsap.fromTo(
+        ".contact-reveal",
+        { y: 28, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.85,
+          stagger: 0.1,
+          ease: "power3.out",
+          delay: 0.15,
+        }
       );
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setForm((current) => ({
-      ...current,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setStatus("loading");
-    setFeedback("");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
-      const data = await response.json();
-
-      if (!response.ok || !data.ok) {
-        throw new Error(data.message || "No pudimos enviar el mensaje.");
-      }
-
-      setForm(initialForm);
-      setStatus("success");
-      setFeedback("Mensaje enviado. Te contactaremos pronto para revisar tu solución.");
-    } catch (error) {
-      setStatus("error");
-      setFeedback(error.message || "No pudimos enviar el mensaje. Inténtalo nuevamente.");
-    }
-  };
-
   return (
-    <section ref={containerRef} className="landing-section relative min-h-[90vh] overflow-hidden pt-36 pb-24 md:pt-48 md:pb-40">
+    <section
+      ref={containerRef}
+      className="landing-section relative flex min-h-[90svh] items-center overflow-hidden px-5 pb-24 pt-36 md:px-8 md:pb-32 md:pt-44"
+    >
       <div className="noise-bg" />
       <div className="section-veil" />
-      <div className="absolute inset-0 grid-background opacity-[0.08]" />
-      <div className="absolute left-0 top-32 h-[38rem] w-px bg-gradient-to-b from-transparent via-calipso-300/[0.18] to-transparent opacity-50 md:left-12" />
-      <div className="mx-auto max-w-[96rem] px-5 md:px-8 flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
-        
-        {/* Lado Izquierdo: Info Directa */}
-        <div className="contact-left w-full lg:w-5/12 flex flex-col justify-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-calipso-300">Contacto</p>
-          <h1 className="text-5xl md:text-7xl font-light leading-tight tracking-[-0.04em] text-white mb-6">
-            Hablemos de tu <br className="hidden md:block"/> <span className="font-semibold italic">negocio.</span>
-          </h1>
-          <p className="text-white/70 text-lg mb-12 max-w-md leading-relaxed">
-            Desde una web o aplicación hasta software a medida, ETL, Power BI, integraciones, cloud o IA: cuéntanos el desafío y diseñaremos la solución correcta.
+      <div className="absolute inset-0 grid-background opacity-[0.07]" />
+
+      <div className="relative z-10 mx-auto w-full max-w-[90rem]">
+        <div className="contact-reveal flex items-center gap-4">
+          <span className="h-px w-10 bg-calipso-300/70" />
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-calipso-200/80">
+            Contacto
           </p>
-
-          <div className="flex flex-col gap-5">
-            {/* Correo Card */}
-            <a href="mailto:contacto@khido.cl" className="premium-float group flex items-center gap-6 p-6 rounded-[1.5rem] border border-white/[0.08] bg-white/[0.026] backdrop-blur-xl transition-colors hover:border-calipso-300/[0.24] hover:bg-calipso-500/[0.045]">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-calipso-500/10 text-calipso-400 transition-transform group-hover:scale-110">
-                <Mail size={28} />
-              </div>
-              <div>
-                <p className="text-white font-medium text-lg mb-1">Correo Electrónico</p>
-                <p className="text-white/50 text-sm">contacto@khido.cl</p>
-              </div>
-              <ArrowRight className="ml-auto text-white/20 transition-transform group-hover:translate-x-2 group-hover:text-calipso-400" />
-            </a>
-          </div>
         </div>
 
-        {/* Lado Derecho: Formulario */}
-        <div className="w-full lg:w-7/12 flex items-center">
-          <div className="contact-form premium-float relative w-full rounded-[2.5rem] border border-white/[0.08] bg-white/[0.028] p-8 md:p-14 backdrop-blur-2xl shadow-[0_24px_90px_-68px_rgba(0,0,0,0.95)] overflow-hidden">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-calipso-300/[0.06] rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3" />
-            
-            <form className="relative z-10 flex flex-col gap-6" onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="website"
-                value={form.website}
-                onChange={handleChange}
-                tabIndex={-1}
-                autoComplete="off"
-                className="hidden"
-                aria-hidden="true"
-              />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm text-white/50 font-medium pl-1">Nombre completo</label>
-                  <input type="text" id="name" name="name" value={form.name} onChange={handleChange} required placeholder="Ej. Juan Pérez" className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white placeholder-white/20 outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05]" />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm text-white/50 font-medium pl-1">Correo electrónico</label>
-                  <input type="email" id="email" name="email" value={form.email} onChange={handleChange} required placeholder="juan@empresa.com" className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white placeholder-white/20 outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05]" />
-                </div>
-              </div>
+        <div className="mt-10 grid gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:items-end lg:gap-20">
+          <h1 className="contact-reveal max-w-[11ch] text-[clamp(3.6rem,10vw,8.5rem)] font-light leading-[0.93] tracking-[-0.045em] text-white">
+            Construyamos
+            <br />
+            <span className="font-semibold italic text-calipso-200">algo valioso.</span>
+          </h1>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="phone" className="pl-1 text-sm font-medium text-white/50">Teléfono</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    required
-                    minLength={8}
-                    maxLength={20}
-                    inputMode="tel"
-                    autoComplete="tel"
-                    placeholder="Ej. +56 9 1234 5678"
-                    className="w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white outline-none transition-all placeholder:text-white/20 focus:border-calipso-400/50 focus:bg-white/[0.05]"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="service" className="pl-1 text-sm font-medium text-white/50">Servicio de interés</label>
-                  <div className="relative">
-                    <select id="service" name="service" value={form.service} onChange={handleChange} required className="w-full cursor-pointer appearance-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 pr-11 text-white outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05]">
-                      <option value="" disabled className="text-black">Selecciona un servicio...</option>
-                      <option value="Software a Medida" className="text-black">Software a Medida</option>
-                      <option value="Web Apps y E-commerce" className="text-black">Web, Apps y E-commerce</option>
-                      <option value="Data Engineering y ETL" className="text-black">Data Engineering y ETL</option>
-                      <option value="Power BI y Analítica" className="text-black">Power BI y Analítica</option>
-                      <option value="Integraciones y Automatización" className="text-black">Integraciones y Automatización</option>
-                      <option value="Cloud e Infraestructura" className="text-black">Cloud e Infraestructura</option>
-                      <option value="Inteligencia Artificial" className="text-black">Inteligencia Artificial Aplicada</option>
-                      <option value="Otro / No estoy seguro" className="text-black">Otro / No estoy seguro</option>
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-5 flex items-center text-white/30">
-                      ▼
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm text-white/50 font-medium pl-1">Háblanos de tu proyecto</label>
-                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows="4" placeholder="¿Qué te gustaría construir o mejorar?" className="w-full resize-none rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-white placeholder-white/20 outline-none transition-all focus:border-calipso-400/50 focus:bg-white/[0.05]" />
-              </div>
-
-              {feedback ? (
-                <p className={`rounded-2xl border px-5 py-4 text-sm leading-6 ${
-                  status === "success"
-                    ? "border-calipso-300/[0.22] bg-calipso-300/[0.055] text-calipso-100"
-                    : "border-red-400/[0.22] bg-red-500/[0.055] text-red-100"
-                }`}>
-                  {feedback}
-                </p>
-              ) : null}
-
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="button-glow mt-4 w-full rounded-2xl bg-calipso-500/90 py-5 text-lg font-semibold text-background transition-all hover:scale-[1.02] hover:bg-calipso-400 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
-              >
-                {status === "loading" ? "Enviando..." : "Enviar Mensaje"}
-              </button>
-            </form>
-          </div>
+          <p className="contact-reveal max-w-lg text-base leading-7 text-white/58 md:text-lg md:leading-8 lg:pb-3">
+            Cuéntanos qué necesitas construir, mejorar o conectar. Revisaremos tu desafío y te responderemos directamente por correo.
+          </p>
         </div>
 
+        <div className="contact-reveal mt-14 border-y border-white/[0.09] md:mt-20">
+          <a
+            href="mailto:contacto@khido.cl"
+            className="group flex min-h-28 items-center gap-4 py-7 text-white transition-colors hover:text-calipso-100 focus-visible:text-calipso-100 md:min-h-36 md:gap-7 md:py-9"
+            aria-label="Enviar correo a contacto@khido.cl"
+          >
+            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/[0.12] bg-white/[0.025] text-calipso-300 transition-colors group-hover:border-calipso-300/35 group-hover:bg-calipso-300/[0.08] md:h-14 md:w-14">
+              <Mail size={22} strokeWidth={1.6} />
+            </span>
+
+            <span className="min-w-0 flex-1 break-all text-[clamp(1.35rem,4.5vw,4.4rem)] font-light leading-none tracking-[-0.035em] sm:break-normal">
+              contacto@khido.cl
+            </span>
+
+            <ArrowUpRight
+              size={32}
+              strokeWidth={1.35}
+              className="shrink-0 text-white/35 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-calipso-300 md:h-11 md:w-11"
+            />
+          </a>
+        </div>
+
+        <div className="contact-reveal mt-7 flex flex-col gap-2 text-sm text-white/38 sm:flex-row sm:items-center sm:justify-between">
+          <p>Canal oficial de contacto</p>
+          <p>Santiago, Chile</p>
+        </div>
       </div>
     </section>
   );
